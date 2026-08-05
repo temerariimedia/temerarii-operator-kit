@@ -1,0 +1,10 @@
+# Calendar presentation metadata. Every brand carries one; nothing here is code-facing.
+# It exists so the office renders a brand's calendar with that brand's own framing rather
+# than a default someone forgot to change.
+subtitle: "Receipts over rhetoric · Build in public · Minus the hype"
+intro: "Temerarii Media — fiscal 2026. An AI lab and a go-to-market house in one building: the lab ships working experiments, the house uses them to move revenue and attention for partner brands. Eight service pillars, one engine, briefed once. The calendar runs on the shared channel calendar — all social, long form, and owned (blog, email, SMS) — and the studio's own content goes through the same pipeline it sells, which is the point."
+launch_day: "Sun Jul 5, 2026 (fiscal Week 27)"
+sequence: "Week 27 — the kit ships one authored week; the real campaign runs 27-30"
+publishing: "Shared channel calendar: 9 social + long form + blog, email and SMS"
+nav: ["Calendar", "Dashboard", "Brand book"]
+maintained_by: "Maintained by Temerarii Media"
