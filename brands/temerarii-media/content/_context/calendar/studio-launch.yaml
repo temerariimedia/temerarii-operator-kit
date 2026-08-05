@@ -118,6 +118,7 @@ weeks:
       vo_music: Calm, even narration over a low, steady pulse. Music sits under the voice and never spikes.
     days:
       Sun:
+        longform: "One brief, nine channels, filmed end to end (11 min). We take a single authored week and follow it through the engine: rails checked, assets rendered in both aspect ratios, payloads validated, published. Every step shown on screen, including the two that failed on the first pass."
         email: Temerarii is open. Here is what the studio does and who we built it for.
         email_subject: Temerarii is open
         email_preheader: An AI lab and a go-to-market house, taking partners now. What that means for you.
@@ -235,6 +236,7 @@ weeks:
         - 'Open studio, plain terms: you brief the outcome, we show the path and the cost.'
         - Tell us the problem in one sentence. We will tell you which of the eight pillars solves it.
       Wed:
+        short: "9:16 — Screen recording, no face. A banned word gets typed into a cell and the gate rejects it before it can be saved. VO: 'The rules are not a style guide somebody remembers. They run on every save.'"
         email: 'Who this is for: growth-stage brands that want a builder with range, not a vendor with one trick.'
         email_subject: Who the studio is for
         email_preheader: Growth-stage brands that want range, not a vendor with one trick.
@@ -313,6 +315,7 @@ weeks:
         - We would rather be judged on what we ship than on what we claim. So we ship in public.
         - Partnering early means you see the receipts as we build them, not a polished case study later.
       Fri:
+        podcast: "Ep. 1 — Proving it on ourselves first. Twenty-six minutes on why the studio runs its own content through the same pipeline it sells: what that caught in the first quarter, and the two things it did not catch."
         email: 'Week one recap: the studio is open, the terms are plain, the proof starts Monday.'
         email_subject: Week one, in plain terms
         email_preheader: The studio is open, the terms are plain, the proof starts Monday.

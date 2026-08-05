@@ -21,6 +21,7 @@ from collections.abc import Callable
 
 from .brand import active_brand, brand_json
 from .calendar import campaign_weeks, campaigns, load_all, load_campaign, load_goal
+from .content import resolve, unauthored
 from .schedule import NUM_WEEKS, fiscal_label
 from .voice import scan_brand
 
@@ -115,8 +116,56 @@ def gate_brand_package(brand: str) -> Result:
     return (not problems), problems
 
 
+def gate_channel_coverage(brand: str) -> Result:
+    """Every channel a brand DECLARES must have authored content in every authored week.
+
+    WHY: publish once used the week's tagline as the body for every channel. Nothing
+    failed — payloads built, validation passed, the mock accepted all of them — and the
+    result was fifteen identical posts going out under a client's name. A pipeline that
+    cannot tell "authored for this surface" from "filled in with whatever was nearby" is
+    not a pipeline, and the absence of an error is exactly what made it survive.
+
+    Declaring a channel is a commitment to author for it. If a brand does not publish to
+    podcasts, the fix is to remove it from the package — not to let the week ship silence.
+    """
+    from .publish import channels  # local import: publish imports calendar, avoid a cycle
+
+    declared = channels(brand)
+    problems: list[str] = []
+    for wk, wd in sorted(load_all(brand).items()):
+        if missing := unauthored(wd, declared):
+            problems.append(f"W{wk} ({wd.campaign_id}): no authored content for "
+                            f"{', '.join(missing)}")
+    return (not problems), problems
+
+
+def gate_channel_limits(brand: str) -> Result:
+    """Authored copy must fit the platform it is bound for.
+
+    Over-length copy is not rejected by most platforms — it is TRUNCATED, silently, often
+    mid-word and usually right where the link was. Catching it here costs nothing;
+    catching it after publication costs the post.
+    """
+    from .content import over_limit
+    from .publish import channels
+
+    declared = channels(brand)
+    problems: list[str] = []
+    for wk, wd in sorted(load_all(brand).items()):
+        for ch in declared:
+            hit = resolve(wd, ch)
+            if not hit:
+                continue
+            body, field = hit
+            if limit := over_limit(body, ch):
+                problems.append(f"W{wk} {field} -> {ch}: {len(body)} chars, limit {limit}")
+    return (not problems), problems
+
+
 GATES: dict[str, Callable[[str], Result]] = {
     "placement": gate_placement,
+    "channel_coverage": gate_channel_coverage,
+    "channel_limits": gate_channel_limits,
     "year_boundary": gate_year_boundary,
     "completeness": gate_completeness,
     "voice": gate_voice,

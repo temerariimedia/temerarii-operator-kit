@@ -36,6 +36,7 @@ weeks:
       vo_music: "Calm, unhurried, conversational — a neighbor explaining something on a driveway. Light acoustic bed well under the voice, no build, no swell at the CTA."
     days:
       Sun:
+        longform: "The whole spring tune-up, filmed start to finish (9 min) — one system, one technician, unedited except for the drive time. Chapters: what gets measured and why, refrigerant charge against spec, the coil, capacitor under load, temperature split, static pressure, and reading your own report afterward."
         email: "The whole tune-up checklist, published — decide for yourself if you need one."
         email_subject: "What a spring tune-up actually includes"
         email_preheader: "The full checklist and the price, before you book anything."
@@ -58,6 +59,7 @@ weeks:
           - "Booked appointments beat emergency ones on price, on timing, and on how your afternoon goes."
           - "One question worth asking any company: when did you last measure the temperature split on this system?"
       Tue:
+        short: "9:16 — Hands only, one continuous take. Technician pulls a filter, holds it to the daylight. VO: 'If light gets through, you are fine for another month. If it does not, that is a twelve dollar fix you can do yourself.' End card: the checklist, no booking prompt."
         email: "The written report is the actual product."
         email_subject: "You get the readings, not a verdict"
         email_preheader: "Measured values, manufacturer spec, and where your system sits."
@@ -81,6 +83,7 @@ weeks:
           - "Seventeen years old and holding charge is a real answer. So is 'this one has a season left.'"
           - "Skip the spring visit and you are the one calling us from a hot house in July. Every year it is the same list of names."
       Thu:
+        podcast: "Ep. 4 — What a written report should tell you. Twenty-two minutes on why the measurements matter more than the cleaning: which numbers a homeowner can check themselves, what manufacturer spec actually means, and how to read a second opinion against a first one."
         email: "Maintenance plan math, in plain numbers."
         email_subject: "Whether the plan is worth it for you"
         email_preheader: "Two visits, priority scheduling, and member pricing — here's the arithmetic."
@@ -158,6 +161,7 @@ weeks:
           - "The rule leaves out two things: whether the failed part is a wear item or a symptom, and what the system costs you to run."
           - "Ask which one you are dealing with. Any technician should answer without hesitating."
       Mon:
+        longform: "Repair or replace: the arithmetic (7 min). We put a 17-year-old condenser and a four-year-old one side by side, run the same checks on both, and show the actual numbers behind a replacement recommendation — including the case where the honest answer is to keep the old one."
         email: "A wear item is not the same as a symptom."
         email_subject: "Capacitor vs. coil"
         email_preheader: "One is routine. The other usually means more is coming."
@@ -181,6 +185,7 @@ weeks:
           - "Rebates change year to year and by equipment tier. Check before you sign, not after."
           - "If replacement is the right call, the rebate is the first thing to look up."
       Wed:
+        short: "9:16 — Two thermometers, supply and return vent, split-screen. VO: 'Eighteen to twenty-two degrees of difference means it is moving heat the way it should. You can measure this yourself with a five dollar thermometer.'"
         email: "Three options at three prices, and time to think."
         email_subject: "How we quote a replacement"
         email_preheader: "Three tiers, the rebate, and no same-day pressure."
@@ -203,6 +208,7 @@ weeks:
           - "We keep a copy so the fall visit starts from what the spring visit measured."
           - "Every reading has a manufacturer spec next to it. That is what makes it checkable."
       Fri:
+        podcast: "Ep. 5 — Scheduling, not urgency. Eighteen minutes on why maintenance in May costs the same as maintenance in July and buys you a different experience: how a service calendar actually fills, and what changes for you when it does."
         email: "Booking stays open through the end of the season."
         email_subject: "Windows you pick, through June"
         email_preheader: "Tune-ups and second-opinion visits, both open."

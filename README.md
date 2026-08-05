@@ -113,6 +113,7 @@ pipeline/
   brand.py             brand resolution — where every brand lookup starts
   schedule.py          4-4-5 fiscal calendar; weeks past 52 roll into next year
   calendar.py          load authored cells
+  content.py           which authored field feeds which channel (native copy per surface)
   voice.py             the voice gate
   gates.py             every rule the system will not let you break
   publish.py           build + validate publish payloads
@@ -150,7 +151,27 @@ If any instruction ever asks you to put a real key in this repo, that instructio
 
 ---
 
+---
+
+## Native copy per surface
+
+A studio does not write one sentence and publish it everywhere. Each brand here declares
+13–15 channels, and every one draws from its own authored field: `social[]` for short-form
+posts, `short` for 9:16 vertical, `longform` for the YouTube cut, `podcast`, `blog`,
+`email_subject`, `sms`. `pipeline/content.py` is that map.
+
+Two gates hold the line. `channel_coverage` fails if a brand declares a channel and authors
+nothing for it. `channel_limits` fails if copy would be truncated by the platform.
+
+Both exist because this pipeline once used the week's tagline as the body for *every*
+channel. Payloads built, validation passed, the mock accepted all fifteen — and the output
+was fifteen identical posts. Nothing failed, so nothing got fixed.
+
+---
+
 ## Next
 
-`CURRICULUM.md` — the six exercises, in order.
+`CURRICULUM.md` — the six exercises, in order. About half an hour.
+`TIER-2.md` — **bring us a brand.** Paid work at your Round 1 rate, and what the seat is
+actually decided on.
 `SUBMISSION.md` — how to submit.

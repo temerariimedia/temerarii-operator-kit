@@ -23,13 +23,11 @@ import urllib.request
 
 from .brand import active_brand, brand_json
 from .calendar import anchor_date, load_all
+from .content import LIMITS, resolve, unauthored
 from .schedule import fiscal_label, week_sunday
 from .utm import build_utm
 
 MOCK_API = "http://127.0.0.1:8787/publish"
-# Hard platform limits. Exceeding one is a silent truncation at the platform, which is
-# why it is checked here rather than discovered in a screenshot after the fact.
-LIMITS = {"sms": 160, "x": 280, "bluesky": 300}
 
 
 def channels(brand: str | None = None) -> list[str]:
@@ -79,7 +77,14 @@ def build_payloads(week: int, brand: str | None = None) -> list[dict]:
     manual = manual_channels(b)
     out: list[dict] = []
     for ch in channels(b):
-        body = wd.tagline or wd.name
+        # Native copy per surface. resolve() returns None rather than inventing text —
+        # an earlier version used the week's tagline for EVERY channel, which "worked"
+        # and produced fifteen identical posts. Unauthored channels are simply absent
+        # here and are caught loudly by the channel_coverage gate.
+        hit = resolve(wd, ch)
+        if hit is None:
+            continue
+        body, field = hit
         out.append({
             "brand": b,
             "channel": ch,
@@ -90,8 +95,8 @@ def build_payloads(week: int, brand: str | None = None) -> list[dict]:
             "link": build_utm(brand=b, campaign=wd.campaign_id, channel=ch, week=week),
             # "api" ships on --post; "manual" is built, validated and listed for a human.
             "delivery": "manual" if ch in manual else "api",
-            # The traceability contract. Never synthesise this.
-            "source": {"campaign": wd.campaign_id, "week": week, "field": "tagline"},
+            # The traceability contract — the ACTUAL authored field, never synthesised.
+            "source": {"campaign": wd.campaign_id, "week": week, "field": field},
         })
     return out
 
