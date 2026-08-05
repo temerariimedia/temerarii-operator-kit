@@ -1,0 +1,487 @@
+{
+  "name": "Temerarii Media",
+  "tagline": "Hyper-accelerate revenue & attention for your brand.",
+  "voice": {
+    "tone": [
+      "pragmatic",
+      "demystifying",
+      "ROI-obsessed",
+      "minus-the-hype",
+      "jargon-free-with-a-payoff"
+    ],
+    "frames": [
+      "Minus the Hype",
+      "practical playbook",
+      "actually moves the needle",
+      "from [problem] to [result]"
+    ],
+    "banned_words": [
+      "revolutionary",
+      "game-changer",
+      "game-changing",
+      "synergy",
+      "disrupt",
+      "disruptive",
+      "cutting-edge",
+      "world-class",
+      "ninja",
+      "rockstar",
+      "guru",
+      "unleash",
+      "supercharge",
+      "skyrocket",
+      "leverage",
+      "seamless",
+      "paradigm",
+      "next-level",
+      "best-in-class",
+      "magic",
+      "secret sauce",
+      "hustle",
+      "grind",
+      "blessed",
+      "10x",
+      "mind-blowing",
+      "insane",
+      "crushing it"
+    ]
+  },
+  "pillars": [
+    {
+      "id": "performance",
+      "label": "Performance Marketing",
+      "description": "Paid acquisition, funnels, and attribution â€” the spend that moves a number, with the method shown."
+    },
+    {
+      "id": "brand",
+      "label": "Brand Marketing",
+      "description": "Positioning, narrative, and identity â€” why a brand is chosen, not just found."
+    },
+    {
+      "id": "multimedia",
+      "label": "Multimedia",
+      "description": "Video, motion, 3D, and generative media â€” the studio's creative range, on brand."
+    },
+    {
+      "id": "social",
+      "label": "Social Marketing",
+      "description": "Channel strategy and the 9-output matrix â€” one idea, every platform's native format."
+    },
+    {
+      "id": "strategic_relations",
+      "label": "Strategic Relations",
+      "description": "Partnerships, PR, and the bigger table â€” earned attention from the people who matter."
+    },
+    {
+      "id": "it_dev",
+      "label": "IT & Development",
+      "description": "The build layer â€” sites, apps, automations, and the agentic machine behind the work."
+    },
+    {
+      "id": "staff_training",
+      "label": "Staff Training",
+      "description": "Enablement and courses â€” teaching teams to run the playbook themselves."
+    },
+    {
+      "id": "emerging_tech",
+      "label": "Emerging Tech",
+      "description": "The Lab â€” AI, spatial, and agentic experiments shipped in public as proof of range."
+    }
+  ],
+  "strategy": {
+    "_status": "DRAFT â€” pending operator sign-off (Â§ Lock state). Grounded in docs/strategy/POSITIONING.md.",
+    "mission": "Temerarii Media hyper-accelerates revenue and attention for brands â€” building the future of go-to-market, minus the hype. We ship working AI-driven experiments and products, then do the studio work that makes them real â€” proving the system on ourselves first.",
+    "values": [
+      {
+        "name": "Receipts over rhetoric",
+        "body": "Show the work, tie it to revenue. A method behind every number; case studies before claims."
+      },
+      {
+        "name": "Build in public",
+        "body": "Range you can try, not slides about it. The Lab ships live experiments anyone can use."
+      },
+      {
+        "name": "Minus the hype",
+        "body": "Plain words, sourced numbers, no performed excitement. Confidence reads quieter than hype."
+      },
+      {
+        "name": "Range under one house",
+        "body": "Eight pillars â€” creative, performance, emerging tech â€” one brand. The breadth is the argument."
+      },
+      {
+        "name": "Human-in-the-loop",
+        "body": "The reliable middle, not autonomous theater. Operators stay in control; the machine does the heavy lifting."
+      },
+      {
+        "name": "Consent-first",
+        "body": "Public and consented data only. Ethical by construction â€” the premise behind SIE."
+      }
+    ],
+    "persona": {
+      "primary": {
+        "name": "The Operator",
+        "body": "A mid-market or growth-stage brand owner or marketing lead who wants results, not theater â€” shut out by enterprise tools priced for the Fortune 100. Pragmatic, ROI-driven, allergic to hype, short on time."
+      },
+      "secondary": {
+        "name": "The Partner",
+        "body": "A platform or agency partner looking for a neutral builder with genuine range across creative, spatial, agents, and data."
+      }
+    },
+    "personality": [
+      "Pragmatic",
+      "Demystifying",
+      "Bold in motion",
+      "Builder-first",
+      "Quietly confident",
+      "ROI-obsessed"
+    ],
+    "mood_board": [
+      "Dark editorial canvas, one red accent â€” the technical sublime (Evervault / Linear / Vercel restraint)",
+      "Bold kinetic motion â€” the opposite of quiet: kinetic type, logo-reveal, ember-drift",
+      "The 44px working grid showing through â€” honest, built, in-the-machine",
+      "Real screens, real renders, real numbers â€” never generic stock, never AI text baked in"
+    ]
+  },
+  "domains": {
+    "main": "temerarii.com",
+    "platform": "temerarii.xyz",
+    "office": "office.temerarii.xyz",
+    "product": "app.siedata.dev"
+  },
+  "business": {
+    "name": "Temerarii Media",
+    "address": "110 E Houston 7th Floor #50, San Antonio, TX 78205",
+    "city": "San Antonio",
+    "region": "TX",
+    "phone": "(830) 507-2975",
+    "email": "support@temerarii.com",
+    "hq_market": "San Antonio, TX (LocalBusiness NAP + local SEO anchor)",
+    "brand_reach": "global â€” topical authority across the 8 pillars; local signals anchor to San Antonio, but the brand and ICP are not geo-limited",
+    "product_signup": "https://app.siedata.dev/auth/signup"
+  },
+  "palette": {
+    "primary": "#000000",
+    "accent": "#EC1C24",
+    "bg": "#0A0A0C",
+    "fg": "#FFFFFF"
+  },
+  "fonts": {
+    "display": "Tahoma",
+    "body": "Tahoma",
+    "mono": "JetBrains Mono"
+  },
+  "tokens_version": "2.0",
+  "color": {
+    "red": {
+      "700": "#B3141A",
+      "600": "#CC1820",
+      "500": "#EC1C24",
+      "400": "#F0484E",
+      "300": "#F57C80",
+      "100": "#FBC4C6"
+    },
+    "ink": {
+      "900": "#000000",
+      "800": "#0A0A0C",
+      "700": "#16161A",
+      "600": "#1F2024",
+      "500": "#2A2C32",
+      "300": "#5B606E",
+      "100": "#9AA0AE"
+    },
+    "neutral": {
+      "950": "#0A0A0C",
+      "900": "#121317",
+      "800": "#1A1C22",
+      "700": "#262932",
+      "500": "#5B606E",
+      "300": "#9AA0AE",
+      "100": "#D8DBE2",
+      "0": "#FFFFFF"
+    },
+    "fg": {
+      "1": "#FFFFFF",
+      "2": "#C9CCD2",
+      "3": "#8A8F99"
+    },
+    "surface": {
+      "bg": "#0A0A0C",
+      "surface": "#121317",
+      "raised": "#1A1C22",
+      "hairline": "#262932"
+    },
+    "state": {
+      "success": "#3FB984",
+      "warn": "#E0A92E",
+      "error": "#E5484D",
+      "info": "#4C82F2",
+      "live": "#EC1C24"
+    },
+    "secondary_cap": "accent/secondary color < 8% of any frame",
+    "contrast": "red #EC1C24 = accent / UI / large + headings only; NEVER body text on #0A0A0C (fails WCAG AA at small sizes). Body text = white (fg-1) / fg-2 on bg/surface."
+  },
+  "type": {
+    "families": {
+      "display": "Tahoma",
+      "body": "Tahoma",
+      "mono": "JetBrains Mono"
+    },
+    "scale": {
+      "eyebrow": {
+        "font": "mono",
+        "size": "13px",
+        "weight": 500,
+        "transform": "uppercase",
+        "tracking": "0.12em",
+        "color": "fg-3"
+      },
+      "hero": {
+        "font": "display",
+        "size": "clamp(40px,6vw,88px)",
+        "weight": 700,
+        "lh": 1.02,
+        "tracking": "-0.02em"
+      },
+      "display": {
+        "font": "display",
+        "size": "clamp(32px,4.5vw,60px)",
+        "weight": 700,
+        "lh": 1.05,
+        "tracking": "-0.015em"
+      },
+      "h2": {
+        "font": "display",
+        "size": "clamp(24px,4vw,36px)",
+        "weight": 700,
+        "lh": 1.1,
+        "tracking": "-0.01em"
+      },
+      "h3": {
+        "font": "display",
+        "size": "clamp(18px,2.2vw,24px)",
+        "weight": 700,
+        "lh": 1.25
+      },
+      "body-l": {
+        "font": "body",
+        "size": "clamp(17px,1.4vw,19px)",
+        "weight": 400,
+        "lh": 1.6,
+        "measure": "66ch"
+      },
+      "body": {
+        "font": "body",
+        "size": "16px",
+        "weight": 400,
+        "lh": 1.6,
+        "measure": "66ch"
+      },
+      "caption": {
+        "font": "body",
+        "size": "13.5px",
+        "weight": 400,
+        "lh": 1.5,
+        "color": "fg-2"
+      },
+      "counter": {
+        "font": "mono",
+        "size": "13px",
+        "weight": 500,
+        "numeric": "tabular-nums"
+      }
+    },
+    "rule": "Tahoma Bold = ALL headers/headlines (hero/display/h2/h3); Tahoma Regular = body/paragraphs/UI; JetBrains Mono = eyebrows/labels/counters/code. Emphasis via weight, not italics. Tahoma is a system font â€” stack: Tahoma, Verdana, Geneva, sans-serif (no web-font import). All text rendered in the compositor (HTML/Remotion) â€” never AI-generated text baked into images."
+  },
+  "space": {
+    "base": 4,
+    "scale": [
+      4,
+      8,
+      12,
+      16,
+      24,
+      32,
+      48,
+      64,
+      96,
+      128
+    ]
+  },
+  "radius": {
+    "sm": "6px",
+    "md": "10px",
+    "lg": "16px",
+    "pill": "999px"
+  },
+  "elevation": {
+    "0": "none",
+    "1": "0 1px 2px rgba(0,0,0,.4)",
+    "2": "0 4px 16px rgba(0,0,0,.45)",
+    "3": "0 12px 40px rgba(0,0,0,.5)",
+    "ember_glow": "0 0 0 1px rgba(236,28,36,.45), 0 0 24px rgba(236,28,36,.28)"
+  },
+  "grid": {
+    "columns": 12,
+    "gutter": "24px",
+    "container_max": "1240px",
+    "margin": "clamp(16px,5vw,80px)"
+  },
+  "breakpoints": {
+    "sm": "480px",
+    "md": "768px",
+    "lg": "1024px",
+    "xl": "1280px"
+  },
+  "z": {
+    "base": 0,
+    "raised": 10,
+    "sticky": 100,
+    "overlay": 1000,
+    "modal": 1100,
+    "toast": 1200
+  },
+  "motion": {
+    "durations_ms": {
+      "fast": 120,
+      "base": 240,
+      "slow": 480,
+      "cinematic": 6000
+    },
+    "easing": {
+      "standard": "cubic-bezier(0.22, 0.61, 0.36, 1)",
+      "entrance": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "exit": "cubic-bezier(0.55, 0.06, 0.68, 0.19)",
+      "linear": "linear"
+    },
+    "sanctioned": [
+      {
+        "id": "kinetic-build",
+        "label": "Kinetic headline build",
+        "timing": "240-480ms ease-out"
+      },
+      {
+        "id": "logo-reveal",
+        "label": "Logo reveal (composited)",
+        "timing": "reveal reel Â· loop"
+      },
+      {
+        "id": "crossfade-8f",
+        "label": "8-frame crossfade",
+        "timing": "8 frames"
+      },
+      {
+        "id": "receipts-count",
+        "label": "Receipts count-up",
+        "timing": "600ms ease-out, holds"
+      },
+      {
+        "id": "ember-drift",
+        "label": "Ember drift",
+        "timing": "9s loop linear"
+      },
+      {
+        "id": "spatial-parallax",
+        "label": "Spatial / 3D parallax (R3F)",
+        "timing": "ambient slow"
+      },
+      {
+        "id": "cinematic-push",
+        "label": "Cinematic push-in",
+        "timing": "6s, 1.05-1.18 scale"
+      }
+    ],
+    "forbidden": [
+      "bounce/elastic springs",
+      "confetti/sparkle/fireworks",
+      "spin without meaning",
+      "autoplay audio without captions",
+      "AI-generated on-screen text",
+      "cheesy transitions (star-wipe, page-curl)",
+      "motion over 6s that is not a cinematic push",
+      "exclamation-energy / performed excitement"
+    ],
+    "reduced_motion": "Honor prefers-reduced-motion: reduce; ship a static first-frame poster.",
+    "tools": {
+      "css": "micro-interactions + web + brand-book demos (workhorse)",
+      "remotion": "programmatic video â€” the 9-output social matrix",
+      "r3f": "the Lab + 3D / spatial hero moments"
+    }
+  },
+  "cross_promo": {
+    "sie": {
+      "domain": "app.siedata.dev",
+      "role": "secondary consent/data product",
+      "cap": "30 assets/quarter"
+    }
+  },
+  "social_rotation": {
+    "policy": "Every social asset = one logo (of 24) on one ground (of 3). Rotate non-sequentially; all 24 used at least once per rolling month; no pattern/sequence repeats within a rolling 30 days; pairings honor legibility (treatment must read on its ground).",
+    "logos": {
+      "formats": [
+        "icon",
+        "stacked",
+        "horizontal",
+        "block"
+      ],
+      "treatments": [
+        "white-knockout",
+        "color",
+        "liquid-chrome",
+        "ember-fill",
+        "wireframe",
+        "3d-extrude"
+      ],
+      "count": 24,
+      "note": "format chosen by asset shape; treatment + ground rotate. kinetic versions apply to video assets."
+    },
+    "grounds": {
+      "black": "#0A0A0C",
+      "white": "#FFFFFF",
+      "red": "#EC1C24"
+    },
+    "ground_treatment_compat": {
+      "_note": "Â§02 legibility matrix â€” the SINGLE source of which logo treatment goes on which colorway, for ALL assets. The colorway IS the ground; treatments are the legible cells. 10 pairings (4 dark Â· 2 red Â· 4 white). There is NO separate colorway axis. Mirrored in remotion/src/brandkit/MarkTreatment.tsx:LEGIBLE and scripts/render_variants.py.",
+      "black": [
+        "white-knockout",
+        "liquid-chrome",
+        "ember-fill",
+        "wireframe"
+      ],
+      "red": [
+        "white-knockout",
+        "liquid-chrome"
+      ],
+      "white": [
+        "3d-extrude",
+        "color",
+        "ember-fill",
+        "wireframe"
+      ]
+    },
+    "rules": {
+      "one_logo_per_asset": true,
+      "all_logos_per_month": true,
+      "no_repeat_pattern_days": 30,
+      "sequential": false,
+      "pairing": "legibility-compatible only"
+    },
+    "enforced_by": "qa_gate; rotation scheduler planned"
+  },
+  "channels": {
+    "primary": [
+      "x",
+      "linkedin",
+      "instagram",
+      "youtube",
+      "tiktok"
+    ],
+    "secondary": [
+      "facebook",
+      "threads",
+      "bluesky",
+      "pinterest",
+      "blog",
+      "email"
+    ]
+  }
+}

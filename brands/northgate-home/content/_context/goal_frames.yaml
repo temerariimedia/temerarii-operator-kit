@@ -1,0 +1,6 @@
+# Per-week speakable goal — the one line every asset that week leads with.
+# Voice: plainspoken, warm, specific. Urgency is stated only where it is real.
+weeks:
+  # spring-tuneup (10-11)
+  10: { type: awareness, frame: "Book the spring tune-up before the first hot week, while we can still pick your time instead of squeezing you in." }
+  11: { type: conversion, frame: "One visit, a written report, and a straight answer on whether your system needs anything at all." }

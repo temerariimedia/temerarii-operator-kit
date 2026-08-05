@@ -1,0 +1,362 @@
+campaign_id: studio-launch
+theme: Brand · Launch
+weeks:
+  27:
+    name: 'Open the studio: announce that Temerarii is taking on partners and prove we run the machine in public.'
+    tagline: Temerarii is open · LAUNCH WEEK
+    blog: 'Temerarii is open: what the studio is, what it is not, and who it is for'
+    blog_body: 'Temerarii is open and taking partners. Before we say anything about what we can
+
+      do for your brand, here is a plain account of what the studio is, what it is not,
+
+      and who we built it for. If that sounds like the opposite of a launch announcement,
+
+      good. We would rather you understand us than be impressed by us.
+
+
+      ## What the studio is
+
+
+      Temerarii is an AI lab and a go-to-market house in one building. The lab side
+
+      builds the tools: generative media pipelines, agents, 3D, and a content engine
+
+      that turns one idea into native posts across nine channels. The house side uses
+
+      those tools to move two numbers for the brands we partner with: revenue and
+
+      attention. One engine, eight service pillars, briefed once.
+
+
+      The eight pillars are Performance, Brand, Multimedia, Social, Strategic Relations,
+
+      IT and Development, Staff Training, and Emerging Tech. They are not eight teams you
+
+      manage. They are eight outputs from the same system, which is the point: a campaign
+
+      should not break because the creative team and the data team sit in different
+
+      buildings and bill on different invoices.
+
+
+      ## What the studio is not
+
+
+      We are not an agency that talks about AI and ships slides. We do not bill retainers
+
+      for slideware, and we do not run AI theater, the kind of demo that looks impressive
+
+      and produces nothing you can measure. We are not an ad network with a side in
+
+      strategy, so nothing pulls your plan toward the spend that pays us most.
+
+
+      We are also not claiming to be the only people doing this. Plenty of good builders
+
+      exist. What we will say is narrower and checkable: we run the machine in public, on
+
+      ourselves, before we point it at you, and we tie what we ship back to a number.
+
+
+      ## Who it is for
+
+
+      Temerarii is built for growth-stage brands that want a builder with range rather
+
+      than a vendor with one trick. If your last agency talked more than it shipped, that
+
+      is the exact gap we opened to close. If the tools you actually want are priced for
+
+      the Fortune 100 and ignore everyone below it, that pricing problem is part of why we
+
+      exist.
+
+
+      It is not for everyone. If what you want is performed excitement and a deck to show
+
+      the board, we are the wrong studio, and we will tell you so early. A bad fit costs
+
+      both sides more than an honest no.
+
+
+      ## The one promise
+
+
+      Here is the whole promise in one line: hyper-accelerate revenue and attention for
+
+      your brand, minus the hype. Confidence reads quieter than hype, so this launch will
+
+      not shout. It will show.
+
+
+      ## What happens next
+
+
+      This week is recognition: the studio is open, the terms are plain. Next week we map
+
+      the eight pillars so you can picture exactly what you would be buying. The week after
+
+      that is the receipts week, where we open our own engine and show it shipping this
+
+      campaign end to end, including the manual checkpoints and the parts a person still
+
+      has to approve. Then we make the partner ask direct, with a first-ninety-days plan
+
+      and a single way to start.
+
+
+      If you want results instead of theater, the door is open. Read along, judge us on
+
+      what we ship, and when a number on your side needs moving, start the conversation.
+
+      '
+    video: Thirty seconds on why we opened the doors and what walks through them
+    description:
+      strategic_intent: 'Week one plants the flag: Temerarii is open and taking partners. We frame the studio as an AI lab plus a creative and go-to-market house, not another agency that talks about AI. The job this week is recognition and a single clear promise: hyper-accelerate revenue and attention, minus the hype.'
+      brand_rails: We do not claim to be the only ones doing this, and we name no result we cannot show later. No superlatives, no performed excitement, no implied guarantees. Confidence reads quieter than hype.
+      visual_treatment: Dark ground (#0A0A0C) with the red accent (#EC1C24) used once per frame, held under the 8% cap. Tahoma Bold display lockups, Tahoma Regular body, JetBrains Mono labels. Studio doors opening as the recurring motif, shot plain, no stock gloss.
+      vo_music: Calm, even narration over a low, steady pulse. Music sits under the voice and never spikes.
+    days:
+      Sun:
+        email: Temerarii is open. Here is what the studio does and who we built it for.
+        email_subject: Temerarii is open
+        email_preheader: An AI lab and a go-to-market house, taking partners now. What that means for you.
+        email_body: 'Today we opened the studio. Temerarii is an AI lab and a go-to-market house in
+
+          one building, and we are taking partners now.
+
+
+          The short version: we build the tools, then we use them to move two numbers for
+
+          the brands we work with, revenue and attention. One engine, eight service
+
+          pillars, briefed once. You will hear more about the pillars on Monday.
+
+
+          What makes us different is not a claim, it is an order of operations. We run the
+
+          machine in public, on ourselves, before we point it at anyone else. Week three
+
+          of this launch is the proof: we open our own engine and show it shipping this
+
+          campaign end to end, including the manual steps.
+
+
+          For today, the promise in one line: hyper-accelerate revenue and attention for
+
+          your brand, minus the hype. If you want results instead of theater, read along
+
+          this week and judge us on what we ship.
+
+          '
+        social:
+        - We opened the studio today. Temerarii is an AI lab and a go-to-market house, taking partners now.
+        - 'What we are: a house that runs AI in public. What we are not: an agency that only talks about it.'
+        - 'The promise is plain: more revenue and more attention for your brand, minus the hype.'
+        - We would rather show the work than sell the sizzle. This week we show the doors opening.
+        - If you want results instead of theater, this is the studio for you. Read the launch note.
+      Mon:
+        email: 'Why we opened: the mid-market is priced out of tools built for the Fortune 100. We are not.'
+        email_subject: Why we opened the studio
+        email_preheader: The good tools are priced for the giants. We built for the brands they ignore.
+        email_body: 'A quick note on why Temerarii exists, because the why shapes everything we ship.
+
+
+          The best go-to-market tooling is priced and packaged for the Fortune 100. If you
+
+          run a growth-stage brand, you get the leftovers: software you outgrow in a
+
+          quarter, or enterprise contracts you cannot justify. That gap is the reason we
+
+          built the studio the way we did.
+
+
+          So we made one house with eight service pillars instead of five vendors you have
+
+          to chase and stitch together. You brief the outcome once. Performance, brand,
+
+          multimedia, social, relations, development, training, and emerging tech all read
+
+          from the same brief, so nothing falls between the seams, because there are no
+
+          seams.
+
+
+          We are pragmatic before we are clever. The point is the number at the end, not
+
+          the demo in the middle. Tomorrow: what we will not do, stated plainly.
+
+          '
+        social:
+        - Most AI tooling is priced for the Fortune 100. We built the studio for the brands those tools ignore.
+        - Temerarii is one house with eight service pillars, so you brief once instead of chasing five vendors.
+        - We are pragmatic before we are clever. The point is the number at the end, not the demo.
+        - Open does not mean loud. It means you can see the work and judge it on the receipts.
+        - 'Question for founders: which pillar is your bottleneck right now, performance or attention?'
+      Tue:
+        email: 'What the studio is not: no retainers for slideware, no AI theater, no promises we cannot quantify.'
+        email_subject: What Temerarii is not
+        email_preheader: No retainers for slideware, no AI theater, no number we cannot show.
+        email_body: 'It is easy to say what a studio does. It is more useful to say what it refuses
+
+          to do, because that is where the bill usually hides.
+
+
+          We will not bill you a retainer for slideware. We will not perform excitement in
+
+          a meeting and call it strategy. We will not promise a result we cannot attach a
+
+          number to, and we will not run the kind of AI demo that dazzles and ships
+
+          nothing you can measure.
+
+
+          An agency sells you hours. A studio ships you outcomes. We chose the second
+
+          model on purpose, because hours reward activity and outcomes reward results. We
+
+          would rather explain the mechanism so plainly that you could repeat it without
+
+          us than keep the method behind a curtain.
+
+
+          So here is the open-studio offer in plain terms: you brief the outcome, we show
+
+          the path and the cost. Reply PARTNER and we will send the one-page on how we
+
+          work.
+
+          '
+        sms: Temerarii is open. Reply PARTNER and we will send the one-page on how we work.
+        social:
+        - 'What we will not do: bill you for slideware, perform excitement, or promise a number we cannot show.'
+        - An agency sells you hours. A studio ships you outcomes. We chose the second model on purpose.
+        - Demystifying beats dazzling. We explain the mechanism so you could repeat it without us.
+        - 'Open studio, plain terms: you brief the outcome, we show the path and the cost.'
+        - Tell us the problem in one sentence. We will tell you which of the eight pillars solves it.
+      Wed:
+        email: 'Who this is for: growth-stage brands that want a builder with range, not a vendor with one trick.'
+        email_subject: Who the studio is for
+        email_preheader: Growth-stage brands that want range, not a vendor with one trick.
+        email_body: 'Not every brand should work with us, so here is who Temerarii is built for.
+
+
+          We are for growth-stage brands that want a builder with range: creative,
+
+          performance, data, and the development to actually ship it, under one roof. If
+
+          you have outgrown the single-channel specialist but cannot staff eight of them,
+
+          that is the position the studio is designed for.
+
+
+          We are a neutral builder. There is no ad business pulling your strategy sideways
+
+          and no walled garden we need to defend, so the recommendation you get is the one
+
+          the numbers support. The studio runs generative media, 3D, agents, and a content
+
+          engine end to end, in one house. Range is the point, and few independents can
+
+          show all of it actually running. We can, and this campaign is the proof.
+
+
+          If your last agency talked more than it shipped, that is the gap we opened to
+
+          close. Tomorrow: the proof run starts, on ourselves first.
+
+          '
+        social:
+        - 'Built for growth-stage brands that want range: creative, performance, data, and the tech to ship it.'
+        - We are a neutral builder. No ad business pulling the strategy sideways, no walled garden to defend.
+        - The studio runs generative media, 3D, agents, and a content engine end to end, in one house.
+        - Range is the point. Few independents can show all of it actually running. We can.
+        - If your last agency talked more than it shipped, that is the gap we opened the studio to close.
+      Thu:
+        email: 'The proof comes next week: we point the machine at ourselves before we point it at you.'
+        email_subject: We test it on ourselves first
+        email_preheader: The machine has to work on Temerarii before we sell it to you.
+        email_body: 'Here is the test we set for ourselves, and it is the reason this launch looks
+
+          the way it does.
+
+
+          The machine has to work on Temerarii before we have any business selling it to
+
+          you. So next week we open the engine and show it shipping our own content, start
+
+          to finish: one idea in, nine native posts out, briefed once. You will see the
+
+          drafts the engine produced and the edits a person made before anything posted.
+
+
+          That includes the parts most studios hide. We will name the manual steps, the
+
+          human checkpoints, and anything that broke and got fixed. A real pipeline has
+
+          rough edges, and keeping them visible is the whole point of proving it in
+
+          public.
+
+
+          Proof over promises is not a slogan here, it is the order we do things in. If you
+
+          partner early, you see the receipts as we build them, not a polished case study
+
+          a year later. The proof run starts Monday.
+
+          '
+        social:
+        - 'Here is the test we set ourselves: the machine has to work on Temerarii before we sell it to you.'
+        - Next week we open the engine and show it shipping our own content, start to finish.
+        - Proof over promises is not a slogan here. It is the order we do things in.
+        - We would rather be judged on what we ship than on what we claim. So we ship in public.
+        - Partnering early means you see the receipts as we build them, not a polished case study later.
+      Fri:
+        email: 'Week one recap: the studio is open, the terms are plain, the proof starts Monday.'
+        email_subject: Week one, in plain terms
+        email_preheader: The studio is open, the terms are plain, the proof starts Monday.
+        email_body: 'Week one of the launch in one paragraph, since the point of this studio is to
+
+          respect your time.
+
+
+          Temerarii is open and taking partners. We are a house that runs AI in public,
+
+          built and priced for the growth-stage brands the giant tools ignore. One engine,
+
+          eight pillars, briefed once, reporting back to one number: revenue. We told you
+
+          what we are, what we are not, and who we are for, in plain terms and without the
+
+          performed excitement.
+
+
+          Next week we stop describing and start proving. The engine runs on Temerarii
+
+          itself, end to end, with every step shown, including the manual ones. If you have
+
+          been waiting to see it actually work before you take it seriously, that is
+
+          exactly what Monday is for.
+
+
+          Thanks to everyone who reached out this week. The doors stay open, and so does
+
+          the inbox. Want the partner one-pager before the weekend? Reply YES.
+
+          '
+        sms: Studio is open. Want the partner one-pager before the weekend? Reply YES.
+        social:
+        - 'Week one: Temerarii is open, taking partners, and the proof run on ourselves starts next week.'
+        - 'Recap in one line: a house that runs AI in public, priced for brands the giants ignore.'
+        - Thanks to everyone who reached out this week. The doors stay open. So does the inbox.
+        - 'From the Insights library: one usable line on open the studio: announce that temerarii is taking on partners and prove we run the machine in public.'
+        - 'Weekend read: Temerarii is open: what the studio is, what it is not, and who it is for. The method is on temerarii.com, minus the hype.'
+      Sat:
+        social:
+        - 'Quiet Saturday note: the studio is open and the work speaks first. More proof Monday.'
+        - If you missed it, Temerarii opened this week. Read the launch note when you have ten minutes.
+        - 'From the Insights library: one usable line on open the studio: announce that temerarii is taking on partners and prove we run the machine in public.'
+        - 'Weekend read: Temerarii is open: what the studio is, what it is not, and who it is for. The method is on temerarii.com, minus the hype.'
+        - 'A question to sit with: where does open the studio: announce that temerarii is taking on partners and prove we run the machine in public actually move a number for you?'

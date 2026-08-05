@@ -1,0 +1,61 @@
+# Northgate Home Services — FICTIONAL brand package, built as the contrast case to
+# temerarii-media. Everything here is deliberately different: B2C not B2B, one metro not
+# national, seasonal not thought-leadership, a March fiscal anchor not January, five trade
+# pillars not eight service lines, and a channel mix with no X/LinkedIn/Bluesky in it.
+#
+# The point is not the content. The point is that the SAME engine, gates, renderer and
+# office drive both brands without a line of brand-specific code. If something only works
+# for temerarii-media, this package is where that shows up.
+placement_mode: relative
+brand: northgate-home
+north_star: "Be the company north-side homeowners call twice: once when something breaks, and every season after."
+
+# Five trade pillars — used to tag cells and route channels.
+pillars:
+  - { id: emergency,   label: "Emergency Repair" }
+  - { id: maintenance, label: "Maintenance Plans" }
+  - { id: air_quality, label: "Indoor Air Quality" }
+  - { id: water,       label: "Water Heaters & Plumbing" }
+  - { id: efficiency,  label: "Efficiency & Rebates" }
+
+# A trade fiscal year opens with spring HVAC season, NOT in January. Different anchor from
+# temerarii-media on purpose — every date in this brand derives from here, so if any code
+# assumes 2026-01-04 it breaks loudly against this package.
+year:
+  fiscal: 2026
+  model: "4-4-5"            # 13 weeks/quarter; quarter = ceil(week_in_year/13)
+  anchor: 2026-03-01        # Sun of fiscal W1 (FIXED)
+  num_weeks: 52
+
+quarters:
+  Q1: { weeks: [1, 13],  status: producing }   # Mar-May · spring tune-up season
+  Q2: { weeks: [14, 26], status: planned }     # Jun-Aug · peak cooling + emergency
+  Q3: { weeks: [27, 39], status: planned }     # Sep-Nov · heating changeover
+  Q4: { weeks: [40, 52], status: planned }     # Dec-Feb · deep winter + water heaters
+
+schedule:
+  skipped_weeks: {}
+  campaigns:
+    # Lane = trade. A local service brand runs ONE lane; the parallel always-on lane that
+    # temerarii-media uses does not apply here, which is itself a useful difference — the
+    # drift gate has to handle a single-lane brand as gracefully as a two-lane one.
+    - id: spring-tuneup
+      label: "Spring Tune-Up — book before the first hot week"
+      track: trade
+      pillar: maintenance
+      start_week: 10        # W10 Sun = 2026-05-03
+      beats: 2              # W10-11: the seasonal maintenance push
+
+# Atomic cell model — same contract as temerarii-media, different channel set.
+cell_manifest:
+  shared: [goal, cta, schedule, channels, copy]
+  content_types:
+    - social_post
+    - blog
+    - email
+    - sms
+  channels: [google_business_profile, facebook, nextdoor, email, sms, instagram]
+
+scope:
+  authored_weeks: [10, 11]
+  note: "Two weeks authored to the CALENDAR_CELL_SPEC bar. Enough to be a real sandbox for the Creative Lead exercise and a real second brand for the office build, without pretending a fictional brand has a full 52-week plan behind it."

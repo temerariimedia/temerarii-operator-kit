@@ -1,0 +1,47 @@
+name: verify
+
+# Runs on every push and pull request, including forks — this is how a submission is
+# scored. The same commands run on your machine; nothing here is CI-only magic.
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Gates — temerarii-media
+        run: BRAND=temerarii-media python -m pipeline.gates
+
+      # northgate-home ships with three PLANTED voice violations, so its voice gate is
+      # expected to fail on a fresh clone. The other gates must still pass — that is the
+      # real check here, and it is why this step names gates individually instead of
+      # allowing the whole run to fail.
+      - name: Gates — northgate-home (excluding the planted voice failures)
+        run: |
+          for g in placement year_boundary completeness brand_package; do
+            BRAND=northgate-home python -m pipeline.gates --gate "$g"
+          done
+
+      - name: Publish payloads validate against the mock API
+        run: |
+          python mock-api/server.py &
+          sleep 2
+          BRAND=northgate-home python -m pipeline.publish --week 10 --post
+          # Negative controls. A validator nobody has watched reject anything is
+          # indistinguishable from `return True`.
+          python mock-api/test_validation.py
+
+      - name: Scorecard
+        run: python training/grade.py

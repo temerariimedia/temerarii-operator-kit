@@ -1,0 +1,227 @@
+campaign_id: spring-tuneup
+theme: Maintenance · Spring season
+weeks:
+  10:
+    name: "Open the spring tune-up window: book the visit while we can still offer a choice of times, not the first slot left."
+    tagline: Book the tune-up before the first hot week
+    blog: "What a spring tune-up actually includes (and what it doesn't)"
+    blog_body: |-
+      Every spring we get the same question, usually from someone who just got a postcard from a competitor: what am I actually paying for with a tune-up? Fair question. Here is the whole list, in the order the technician does it.
+
+      ## What the visit includes
+
+      A tune-up is about 60 to 75 minutes. The technician checks refrigerant charge against the manufacturer's spec, cleans the outdoor coil, tests the capacitor and contactor under load, measures the temperature split across the evaporator, checks static pressure in the ducts, clears the condensate drain, and replaces the filter if you have one on hand.
+
+      Then you get a written report. It lists what was measured, what the spec is, and where your system sits against it. If everything reads normal, the report says so and we leave.
+
+      ## What it does not include
+
+      It is not a repair. If the technician finds a failing part, they will show you the reading, tell you what the part costs and what happens if you wait, and let you decide. Nothing gets replaced without your approval and a number in front of you.
+
+      It also does not make an old system new. A tune-up on a 19-year-old condenser buys you a cleaner coil and an honest assessment. It does not buy you five more years, and anyone who tells you otherwise is selling something.
+
+      ## Why we push it in May
+
+      Not because your system will fail without it. Because in May we can give you a two-hour window on a day you pick. In late July, when every no-cooling call in the metro lands on the same afternoon, we are scheduling maintenance three weeks out. The work is identical. The scheduling is not.
+
+      ## What it costs
+
+      $129 for a single system, $99 each for a second. Maintenance plan members pay nothing — the two seasonal visits are the plan.
+
+      If your system is under five years old and you have had it serviced in the last twelve months, you can probably skip this year. We will tell you that on the phone before you book.
+    description:
+      strategic_intent: "Convert the easiest maintenance demand of the year while scheduling is still comfortable. The angle is transparency, not urgency: publish the entire checklist and the price, and let the convenience of an early booking do the persuading."
+      brand_rails: "No fear. Do not imply a system will fail without this visit. Do not use countdown language or scarcity framing. Price appears in the copy, not behind a form. If a homeowner does not need the service, the copy says so out loud."
+      visual_treatment: "Real trucks, real technicians, real north-side houses. Daylight, no dramatic angles. Orange accent on the booking action only, one element per frame. No thermal imagery, no gauges shot to look alarming."
+      vo_music: "Calm, unhurried, conversational — a neighbor explaining something on a driveway. Light acoustic bed well under the voice, no build, no swell at the CTA."
+    days:
+      Sun:
+        email: "The whole tune-up checklist, published — decide for yourself if you need one."
+        email_subject: "What a spring tune-up actually includes"
+        email_preheader: "The full checklist and the price, before you book anything."
+        email_body: "Most maintenance postcards tell you to schedule a tune-up and leave out what happens during it. So here is the list: refrigerant charge against spec, outdoor coil cleaned, capacitor and contactor tested under load, temperature split measured, duct static pressure checked, condensate drain cleared, filter swapped if you have one. About 70 minutes, and you get a written report with the actual readings. $129 for one system. If yours is under five years old and was serviced last year, you can skip it — we will tell you that on the phone."
+        social:
+          - "The full spring tune-up checklist, published. Seven checks, about 70 minutes, and a written report with the actual readings."
+          - "A tune-up is not a repair. If the technician finds something, you see the reading and the price before anything gets replaced."
+          - "$129 for one system, $99 for a second. Plan members pay nothing, because the two seasonal visits are the plan."
+          - "If your system is under five years old and was serviced last year, you can probably skip this spring. We will say so on the phone."
+          - "We push tune-ups in May because in May you pick the day. In late July you take what is left."
+      Mon:
+        email: "Why we schedule maintenance in May instead of July."
+        email_subject: "May scheduling vs. July scheduling"
+        email_preheader: "Same work. Very different calendar."
+        email_body: "The work in a spring tune-up does not change between May and July. The scheduling does. Right now we can give you a two-hour window on a day you choose. Once the first stretch of 95-degree days hits, every no-cooling call in the metro lands on the same afternoon, and maintenance moves behind them — usually about three weeks out. That is the entire argument for booking early. Not that anything will break. That you get to pick the time."
+        social:
+          - "Same 70 minutes of work in May or in July. The difference is whether you pick the day or we do."
+          - "In May, a two-hour window on a day you choose. In late July, maintenance goes behind every no-cooling call in the metro."
+          - "Our technicians are not busier in spring because spring is dangerous. They are less busy, which is the point."
+          - "Booked appointments beat emergency ones on price, on timing, and on how your afternoon goes."
+          - "One question worth asking any company: when did you last measure the temperature split on this system?"
+      Tue:
+        email: "The written report is the actual product."
+        email_subject: "You get the readings, not a verdict"
+        email_preheader: "Measured values, manufacturer spec, and where your system sits."
+        email_body: "The part of a tune-up worth paying for is not the cleaning. It is the report. Every check we run produces a number, and the report lists that number next to what the manufacturer says it should be. Refrigerant charge, temperature split, static pressure, capacitor reading. You can hand that report to any other company for a second opinion, and we would rather you did than take our word for it."
+        sms: "Northgate: spring tune-ups are open. $129, about 70 min, written report with the actual readings. Book at northgatehome.example/book"
+        social:
+          - "You get the measured values and the manufacturer spec side by side. Draw your own conclusion."
+          - "Take our report to any other company for a second opinion. We would rather you did than take our word for it."
+          - "Capacitor reading, temperature split, static pressure, refrigerant charge. Four numbers that tell you most of what you need to know."
+          - "A verdict is an opinion. A reading is a fact. The report gives you facts."
+          - "If the readings all come back in spec, the report says your system is fine and we go home."
+      Wed:
+        email: "What we do when the system is old but still working."
+        email_subject: "When the honest answer is 'not yet'"
+        email_preheader: "An old system that reads in spec is an old system that reads in spec."
+        email_body: "A 17-year-old condenser that holds charge, pulls correct amperage, and produces a normal temperature split is a working air conditioner. It is closer to the end than a new one, and we will tell you that. But 'older' is not a diagnosis, and we are not going to quote you a replacement because of the date on the label. When we do recommend replacement, it will be because a specific component failed or the repair cost has crossed the line against the remaining life."
+        social:
+          - "An old system that reads in spec is a working system. Age is not a diagnosis."
+          - "We will not quote a replacement because of the date on the label. We quote when a part fails or the math stops working."
+          - "The repair-versus-replace line is a number, not a feeling. We will show you the number."
+          - "Seventeen years old and holding charge is a real answer. So is 'this one has a season left.'"
+          - "Skip the spring visit and you are the one calling us from a hot house in July. Every year it is the same list of names."
+      Thu:
+        email: "Maintenance plan math, in plain numbers."
+        email_subject: "Whether the plan is worth it for you"
+        email_preheader: "Two visits, priority scheduling, and member pricing — here's the arithmetic."
+        email_body: "The maintenance plan is $19 a month. It covers the spring and fall visits, which run $129 each on their own, and it moves you ahead of non-members when the schedule gets tight in July and January. It also takes 15 percent off any repair. If you would book both seasonal visits anyway, the plan costs less than paying twice. If you would only ever book one, it probably does not, and you should just book the one."
+        social:
+          - "$19 a month covers both seasonal visits, which are $129 each on their own. If you would book both anyway, the plan is cheaper."
+          - "If you would only ever book one visit a year, skip the plan and book the visit. We would rather say that than sell you a subscription."
+          - "Don't wait on this one. Priority scheduling matters exactly twice a year, and both times the calendar fills fast."
+          - "Plan members get 15 percent off repairs. That is the part that pays for itself when something does go."
+          - "Ask any company to show you the plan math instead of the plan brochure."
+      Fri:
+        email: "Booking is open for the next two weeks."
+        email_subject: "Two-hour windows, days you pick"
+        email_preheader: "Spring tune-up scheduling is open through the end of the month."
+        email_body: "Scheduling for spring tune-ups is open through the end of the month, with two-hour arrival windows on the day you choose. If we are running late, you get a call before we are late, not after. Booking takes about a minute at northgatehome.example/book, or call the shop and a person picks up."
+        sms: "Northgate: tune-up scheduling open through month end. Two-hour windows, day you pick. northgatehome.example/book"
+        social:
+          - "Two-hour arrival windows on the day you pick. If we are running late you get a call before we are late."
+          - "Booking takes about a minute online, or call the shop and a person answers."
+          - "Scheduling is open through the end of the month for spring tune-ups."
+          - "We give a window we can keep instead of a window that sounds good."
+          - "A booked appointment on a Tuesday morning is a better afternoon than an emergency call on a Saturday."
+      Sat:
+        email: "One thing you can check yourself this weekend."
+        email_subject: "Check your filter, save the call"
+        email_preheader: "The most common cause of weak airflow, and it costs nothing to check."
+        email_body: "Before you book anything, pull your filter and look at it. If light does not pass through it, that is very often the whole problem — weak airflow, a system running longer than it should, rooms that never quite cool. A filter costs a few dollars and takes a minute. If you swap it and the system still struggles, then it is worth a visit, and you will have already ruled out the cheapest explanation."
+        social:
+          - "Pull your filter and hold it up to a light. If nothing passes through, that is very often the whole problem."
+          - "A filter costs a few dollars. Try that before you book anything."
+          - "Weak airflow, long run times, one room that never cools — check the filter first."
+          - "If you swap the filter and it still struggles, then a visit is worth it and you have ruled out the cheap answer."
+          - "We would rather lose a service call to a $6 filter than take the money."
+  11:
+    name: "Turn the published checklist into booked appointments: one visit, a written report, and a straight answer on whether anything is needed at all."
+    tagline: One visit, a written report, a straight answer
+    blog: "Repair or replace: the number that decides it"
+    blog_body: |-
+      At some point every homeowner gets told their system should be replaced. Here is the arithmetic we use, so you can run it yourself and check anyone's recommendation, including ours.
+
+      ## The rule we actually use
+
+      Take the repair quote. Multiply the system's age in years by the repair cost. If that number is comfortably above the cost of a replacement, replacement is the better spend. If it is well below, repair it and keep going. It is a rough rule, but it is a real one, and it does not depend on how anyone feels about the equipment.
+
+      A $400 repair on an 8-year-old system gives you 3,200 against maybe 7,000 for a replacement. Repair it. That same $400 repair on a 19-year-old system gives you 7,600. Now the conversation is genuinely open.
+
+      ## What the rule leaves out
+
+      Two things. First, whether the failed part is a one-off or a symptom — a failed capacitor is a wear item, while a leaking evaporator coil on an older system usually means more is coming. Second, what you are paying every month to run it. A system operating well below its rated efficiency can cost enough over a summer to change the math on its own.
+
+      Ask which of the two you are dealing with. Any technician should be able to answer without hesitating.
+
+      ## What we will not do
+
+      We will not quote a replacement because of the year on the label, and we will not use a repair visit as a lead-in to a sales pitch. If the number says repair, we repair it, and you will hear from us again in the fall for a tune-up rather than a proposal.
+
+      ## If the number says replace
+
+      Then we will give you three options at three price points, tell you what the utility rebate is worth this year, and let you sit with it. A replacement is not an emergency purchase unless you have no heat in February, and even then there are portable options that buy you a weekend to decide.
+    description:
+      strategic_intent: "Convert the trust built in week 10 into booked visits by handing over the decision rule itself. A homeowner who can run the repair-versus-replace math is a homeowner who trusts the company that taught it to them."
+      brand_rails: "Give away the arithmetic. Never imply a replacement is urgent unless the system is genuinely down. No countdown or scarcity language on the offer. Rebate figures must be checkable and attributed to the utility, not implied as our discount."
+      visual_treatment: "The number on screen, plainly set. Real equipment, daylight, no dramatic lighting on failed parts. Orange accent on the booking action only. No before-and-after imagery used to alarm."
+      vo_music: "Same calm conversational read as week 10. Slightly warmer on the closing line. Acoustic bed stays under the voice; no swell at the CTA."
+    days:
+      Sun:
+        email: "The repair-or-replace number, so you can run it yourself."
+        email_subject: "The math behind repair vs. replace"
+        email_preheader: "Age times repair cost. Run it on any quote, from anyone."
+        email_body: "Here is the rule we use. Multiply the system's age in years by the repair quote. Compare that to what a replacement costs. A $400 repair on an 8-year-old system gives you 3,200 against maybe 7,000 to replace — repair it. The same repair on a 19-year-old system gives you 7,600, and the conversation is genuinely open. It is rough, but it is real, and it works on anyone's quote including ours."
+        social:
+          - "Age in years times the repair quote. Compare to replacement cost. That is the whole rule."
+          - "$400 repair on an 8-year-old system: repair it. Same repair at 19 years: now it is a real conversation."
+          - "Run this on our quote too. A rule you can check is worth more than a recommendation you cannot."
+          - "The rule leaves out two things: whether the failed part is a wear item or a symptom, and what the system costs you to run."
+          - "Ask which one you are dealing with. Any technician should answer without hesitating."
+      Mon:
+        email: "A wear item is not the same as a symptom."
+        email_subject: "Capacitor vs. coil"
+        email_preheader: "One is routine. The other usually means more is coming."
+        email_body: "A failed capacitor is a wear item — they die on a schedule, they are inexpensive, and replacing one on a healthy system is ordinary maintenance. A leaking evaporator coil on a system past fifteen years is usually a symptom, and the honest answer is that more is likely coming behind it. Same repair visit, completely different conversation. Ask which one you have."
+        social:
+          - "A failed capacitor is a wear item. They die on a schedule and they are cheap."
+          - "A leaking evaporator coil on an older system is usually a symptom, not an incident."
+          - "Same visit, different conversation. Ask which one you are dealing with."
+          - "Routine parts fail routinely. That is not a sign your system is finished."
+          - "The question is never just what broke. It is whether what broke tells you something."
+      Tue:
+        email: "What the utility rebate is actually worth this year."
+        email_subject: "Rebates, in real numbers"
+        email_preheader: "What the utility pays, and what it doesn't."
+        email_body: "If replacement is the right call, the utility rebate is worth checking before you sign anything. This year it covers a meaningful share of a qualifying high-efficiency system, and it is paid by the utility, not by us — we just file the paperwork. The rebate amount and eligibility are published on the utility's own site, so verify it there rather than taking a contractor's number for it. Any company quoting you a rebate should be able to point you at the source."
+        sms: "Northgate: replacing a system this season? Check the utility rebate on their site before you sign anything. Questions: northgatehome.example/book"
+        social:
+          - "The rebate is paid by the utility, not by us. We file the paperwork; they set the amount."
+          - "Our spring rebate takes $1,200 off a qualifying high-efficiency system. Ask about it when you book."
+          - "A contractor who cannot point you at the source for a rebate number is quoting you a feeling."
+          - "Rebates change year to year and by equipment tier. Check before you sign, not after."
+          - "If replacement is the right call, the rebate is the first thing to look up."
+      Wed:
+        email: "Three options at three prices, and time to think."
+        email_subject: "How we quote a replacement"
+        email_preheader: "Three tiers, the rebate, and no same-day pressure."
+        email_body: "When a replacement is genuinely the right call, you get three options at three price points, what the utility rebate is worth on each, and the efficiency difference in operating cost rather than in marketing terms. Then you get time. A replacement is not an emergency purchase unless you have no heat in February, and even then there are portable options that buy you a weekend to decide properly."
+        social:
+          - "Three options, three price points, and the operating-cost difference in dollars rather than adjectives."
+          - "A replacement is not an emergency purchase unless the system is down and it is February."
+          - "If it is down in February, there are portable options that buy you a weekend to decide properly."
+          - "Any quote you cannot sit on overnight is a quote worth questioning."
+          - "We will leave the numbers with you and follow up once. Not four times."
+      Thu:
+        email: "What happens after we leave."
+        email_subject: "The report is yours"
+        email_preheader: "Take it anywhere. That is the point."
+        email_body: "The written report from any visit is yours to keep and yours to share. Homeowners take ours for second opinions regularly and we would rather that than have anyone booking work on trust alone. If another company reads the same numbers differently, that is a useful conversation to have — and if they cannot explain the difference against the manufacturer spec, that tells you something too."
+        social:
+          - "The report is yours. Take it for a second opinion — we would rather you did."
+          - "If another company reads the same numbers differently, that is a conversation worth having."
+          - "A recommendation you cannot check is a recommendation you should not act on."
+          - "We keep a copy so the fall visit starts from what the spring visit measured."
+          - "Every reading has a manufacturer spec next to it. That is what makes it checkable."
+      Fri:
+        email: "Booking stays open through the end of the season."
+        email_subject: "Windows you pick, through June"
+        email_preheader: "Tune-ups and second-opinion visits, both open."
+        email_body: "Spring scheduling stays open through June with two-hour windows on the day you choose. That covers both tune-ups and second-opinion visits if you have a quote from someone else you would like read against the actual readings. Booking takes about a minute at northgatehome.example/book, or call the shop and a person picks up."
+        sms: "Northgate: spring scheduling open through June. Tune-ups and second opinions, two-hour windows. northgatehome.example/book"
+        social:
+          - "Scheduling stays open through June, two-hour windows on the day you pick."
+          - "Second-opinion visits are a real thing we do. Bring the other quote."
+          - "If we are running late you get a call before we are late, not after."
+          - "Booking takes a minute online, or call and a person answers."
+          - "A booked Tuesday morning beats an emergency Saturday every time."
+      Sat:
+        email: "The one maintenance task worth doing yourself."
+        email_subject: "Clear the condensate line"
+        email_preheader: "Five minutes, and it prevents the most common summer call."
+        email_body: "The most common summer service call we run is not a failed compressor. It is a clogged condensate drain backing up and tripping the float switch, which shuts the system off. You can clear it yourself: find the PVC line near the indoor unit, pull the cap, and pour a cup of distilled vinegar down it every couple of months. That is the whole job. If the system still will not run after the line is clear, then it is worth a call."
+        social:
+          - "The most common summer call we run is a clogged condensate drain, not a failed compressor."
+          - "Pull the cap on the PVC line near the indoor unit and pour a cup of distilled vinegar down it. That is the whole job."
+          - "Every couple of months is often enough. It takes five minutes."
+          - "A clogged drain trips the float switch and shuts the system off. Looks like a failure, is not one."
+          - "If the line is clear and it still will not run, then call. Now you have ruled out the common one."

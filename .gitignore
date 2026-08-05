@@ -1,0 +1,37 @@
+# Candidate answers. These are YOURS — commit them in your own fork if you like, but
+# they are ignored here so the reference repo never ships an answer key.
+training/answers/
+
+# Mock API output
+mock-api/received.jsonl
+
+# Build + render output
+out/
+dist/
+*.mp4
+*.mov
+*.wav
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Node
+node_modules/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Never commit credentials. There are none in this kit and there should never be —
+# every exercise runs against the local mock API.
+.env
+.env.*
+!.env.example
+secrets/
+credentials/

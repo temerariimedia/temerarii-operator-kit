@@ -1,0 +1,144 @@
+"""Build publish payloads from authored cells, and (optionally) post them to the mock API.
+
+    python -m pipeline.publish --week 27 --dry-run
+    python -m pipeline.publish --brand northgate-home --week 12 --post
+
+THE RULE THIS ENFORCES: every published item traces back to a registry entry. A payload
+with no `source` is refused here, before it ever reaches a network call. "Where did this
+post come from?" must have an answer six months later, and the only reliable way to get
+one is to make an unattributable payload impossible to construct.
+
+Channels are per-brand and are NOT the same set. temerarii-media runs nine social
+channels; northgate-home is a local trade business and runs Google Business Profile,
+local SEO, Nextdoor, email and SMS — it has no business on X or Bluesky. Hardcoding a
+channel list is the same class of bug as hardcoding a banned-word list.
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+import urllib.error
+import urllib.request
+
+from .brand import active_brand, brand_json
+from .calendar import anchor_date, load_all
+from .schedule import fiscal_label, week_sunday
+from .utm import build_utm
+
+MOCK_API = "http://127.0.0.1:8787/publish"
+# Hard platform limits. Exceeding one is a silent truncation at the platform, which is
+# why it is checked here rather than discovered in a screenshot after the fact.
+LIMITS = {"sms": 160, "x": 280, "bluesky": 300}
+
+
+def channels(brand: str | None = None) -> list[str]:
+    ch = brand_json(brand).get("channels") or {}
+    out: list[str] = []
+    for key in ("primary", "secondary"):
+        out.extend(ch.get(key) or [])
+    # `_note` keys are internal commentary in the brand package, never data.
+    return [c for c in out if not str(c).startswith("_")]
+
+
+def build_payloads(week: int, brand: str | None = None) -> list[dict]:
+    b = active_brand(brand)
+    weeks = load_all(b)
+    if week not in weeks:
+        raise SystemExit(f"{b}: week {week} is not authored. "
+                         f"authored weeks: {sorted(weeks) or 'none'}")
+    wd = weeks[week]
+    anchor = anchor_date(b)
+    label = fiscal_label(week, anchor.year)
+    out: list[dict] = []
+    for ch in channels(b):
+        body = wd.tagline or wd.name
+        out.append({
+            "brand": b,
+            "channel": ch,
+            "week": week,
+            "fiscal_label": label,
+            "scheduled_for": week_sunday(anchor, week).isoformat(),
+            "body": body,
+            "link": build_utm(brand=b, campaign=wd.campaign_id, channel=ch, week=week),
+            # The traceability contract. Never synthesise this.
+            "source": {"campaign": wd.campaign_id, "week": week, "field": "tagline"},
+        })
+    return out
+
+
+def validate(payloads: list[dict]) -> list[str]:
+    """Local checks, run BEFORE any network call — a bad payload should never be sent."""
+    errs: list[str] = []
+    for p in payloads:
+        who = f"{p.get('channel', '?')}/W{p.get('week', '?')}"
+        if not p.get("body"):
+            errs.append(f"{who}: empty body")
+        if not p.get("source"):
+            errs.append(f"{who}: missing source — every item must trace to a registry entry")
+        limit = LIMITS.get(p.get("channel", ""))
+        if limit and len(p.get("body", "")) > limit:
+            errs.append(f"{who}: body is {len(p['body'])} chars, limit is {limit}")
+        if not str(p.get("link", "")).startswith("http"):
+            errs.append(f"{who}: link is not a URL")
+    return errs
+
+
+def post(payloads: list[dict], url: str = MOCK_API) -> int:
+    ok = 0
+    for p in payloads:
+        req = urllib.request.Request(
+            url, data=json.dumps(p).encode("utf-8"),
+            headers={"Content-Type": "application/json"}, method="POST")
+        try:
+            with urllib.request.urlopen(req, timeout=10) as r:
+                if r.status == 200:
+                    ok += 1
+                else:
+                    print(f"  {p['channel']}: HTTP {r.status}")
+        except urllib.error.HTTPError as e:
+            print(f"  {p['channel']}: HTTP {e.code} — {e.read().decode('utf-8')[:200]}")
+        except urllib.error.URLError as e:
+            raise SystemExit(f"mock API unreachable at {url} ({e.reason}). "
+                             f"Start it: python mock-api/server.py") from e
+    return ok
+
+
+def main(argv=None) -> int:
+    ap = argparse.ArgumentParser(description="Build and validate publish payloads.")
+    ap.add_argument("--brand", default=None)
+    ap.add_argument("--week", type=int, required=True)
+    ap.add_argument("--post", action="store_true", help="send to the mock API")
+    ap.add_argument("--dry-run", action="store_true", help="print payloads, send nothing")
+    ap.add_argument("--out", default=None, help="write payloads to a JSON file")
+    a = ap.parse_args(argv)
+
+    b = active_brand(a.brand)
+    payloads = build_payloads(a.week, b)
+    print(f"PUBLISH — brand={b} week={a.week} · {len(payloads)} payload(s) "
+          f"across {len(channels(b))} channel(s)")
+
+    errs = validate(payloads)
+    if errs:
+        print(f"\nVALIDATION FAIL — {len(errs)} problem(s):")
+        for e in errs:
+            print(f"  - {e}")
+        return 1
+    print("validation OK")
+
+    if a.out:
+        with open(a.out, "w", encoding="utf-8") as f:
+            json.dump(payloads, f, indent=2)
+        print(f"wrote {a.out}")
+    if a.dry_run:
+        print(json.dumps(payloads, indent=2)[:2000])
+        return 0
+    if a.post:
+        ok = post(payloads)
+        print(f"accepted {ok}/{len(payloads)}")
+        return 0 if ok == len(payloads) else 1
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
