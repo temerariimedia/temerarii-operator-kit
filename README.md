@@ -169,9 +169,37 @@ was fifteen identical posts. Nothing failed, so nothing got fixed.
 
 ---
 
-## Next
+## Where this sits in the process
 
-`CURRICULUM.md` — the six exercises, in order. About half an hour.
-`TIER-2.md` — **bring us a brand.** Paid work at your Round 1 rate, and what the seat is
-actually decided on.
-`SUBMISSION.md` — how to submit.
+```
+  Stage 1  ─▶  Stage 2      ─▶  Tier 2         ─▶  Round 1
+  qualify      CURRICULUM      TIER-2.md          the seat
+  unpaid       ex 1–3          bring us a brand   FROM-KIT-TO-PRODUCTION.md
+  no new work  ~30 min · $15   paid, ~1 day
+```
+
+Everything is paid from Stage 2 onward, and the Stage 2 fee is **credited against your
+first milestone** — you are never paid twice for the same work and never asked to work
+free.
+
+## Read in this order
+
+| | |
+|---|---|
+| **`CURRICULUM.md`** | The six exercises. About half an hour; do 1–3 for Stage 2. A fresh clone scores 5/6 — exercise 5 is waiting on you. |
+| **`TIER-2.md`** | **Bring us a brand.** Study the two reference packages, then build a third for a business you choose. Paid at your Round 1 rate. This is what the seat is actually decided on. |
+| **`SUBMISSION.md`** | How to submit, what to include, and how long it should take. |
+| **`FROM-KIT-TO-PRODUCTION.md`** | **Read before day one.** What changes when you move from this kit to the real system — what is the same, what is bigger, what the kit deliberately left out (rendering), and what your first week looks like. |
+
+## What this kit is not
+
+It is a **slice** — 26 files against roughly 6,000 in production. Same shape, same rules,
+same choke points; there is simply more of it.
+
+Two things are deliberately absent. **Rendering** — Remotion, dual aspect ratios, audio
+muxed to −16 LUFS — is a real part of the job, excluded here because it needs headless
+Chrome and a working render path, and we would rather test your judgment than your ability
+to install a toolchain. You will be trained on it and not knowing it now costs you nothing.
+And **credentials**: there are none, there is no way to add one usefully, and that does not
+change after you are hired. `FROM-KIT-TO-PRODUCTION.md` explains why that is the design
+rather than a probation period.
