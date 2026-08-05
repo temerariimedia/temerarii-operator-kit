@@ -52,8 +52,13 @@ def list_brands() -> list[str]:
     return sorted(p.name for p in (REPO / "brands").iterdir() if p.is_dir())
 
 
-@functools.lru_cache(maxsize=None)
+_brand_cache: dict | None = None
+
+
 def brand_json(brand: str | None = None) -> dict:
+    global _brand_cache
+    if _brand_cache is not None:
+        return _brand_cache
     """A brand's governance/brand.json.
 
     NOTE the cache key: `brand`. Caching this globally instead — one module-level dict
@@ -66,7 +71,8 @@ def brand_json(brand: str | None = None) -> dict:
     # utf-8-sig, not utf-8: a Windows editor (or PowerShell's `Set-Content -Encoding utf8`)
     # writes a byte-order mark that makes json.loads fail on column 1 with an error that
     # says nothing about encoding. Read it tolerantly instead of losing an hour to it.
-    return json.loads(p.read_text(encoding="utf-8-sig"))
+    _brand_cache = json.loads(p.read_text(encoding="utf-8-sig"))
+    return _brand_cache
 
 
 def banned_words(brand: str | None = None) -> list[str]:

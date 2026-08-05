@@ -104,8 +104,7 @@ def resolve(wd: Week, channel: str) -> tuple[str, str] | None:
                         posts.append((p, f"days.{day}.social[{i}]"))
         if not posts:
             return None
-        idx = sorted(SOCIAL_CHANNELS).index(ch) % len(posts)
-        return posts[idx]
+        return posts[0]
 
     return None
 

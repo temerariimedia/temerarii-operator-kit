@@ -71,7 +71,7 @@ def place(start_week: int, beats: int, skip_weeks: set[int] | None = None) -> li
     skip = skip_weeks or set()
     out: list[int] = []
     wk = int(start_week)
-    horizon = int(start_week) + int(beats) + NUM_WEEKS
+    horizon = NUM_WEEKS
     while len(out) < beats and wk <= horizon:
         if wk not in skip:
             out.append(wk)
