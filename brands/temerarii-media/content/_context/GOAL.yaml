@@ -27,3 +27,15 @@ schedule:
       pillar: brand
       start_week: 27      # bump to postpone the whole run
       beats: 1            # the kit ships W27 only; the real campaign runs 27-30
+
+    # Placed but not yet authored — and placed ACROSS THE YEAR BOUNDARY on purpose.
+    # 50 + 4 beats resolves to weeks 50, 51, 52 and 53, where 53 is 2027-W01. A
+    # scheduler that clamps at 52 does not raise here: it silently returns three weeks
+    # instead of four, and the missing beat is only noticed when it fails to ship.
+    # `place()` raises instead, which is why this campaign is a permanent part of the
+    # fixture rather than a test that lives somewhere less visible.
+    - id: year-end-retro
+      label: "Year-End Retro — what the machine learned"
+      pillar: brand
+      start_week: 50
+      beats: 4
