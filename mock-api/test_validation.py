@@ -29,7 +29,11 @@ CASES: list[tuple[str, dict, int]] = [
     ("missing source", {k: v for k, v in GOOD.items() if k != "source"}, 422),
     ("source without campaign", {**GOOD, "source": {"week": 10}}, 422),
     ("sms body over 160", {**GOOD, "channel": "sms", "body": "z" * 200}, 422),
-    ("channel not enabled for brand", {**GOOD, "channel": "x"}, 422),
+    # Nextdoor is a REAL channel with no publish API. Accepting it would be the worst
+    # outcome available: everything downstream would report a success that never happened.
+    ("manual-only channel refused", {**GOOD, "channel": "nextdoor"}, 422),
+    ("unknown channel", {**GOOD, "channel": "myspace"}, 422),
+    ("podcast is a valid channel", {**GOOD, "channel": "podcast"}, 200),
     ("link missing utm_campaign", {**GOOD, "link": "https://northgatehome.example/"}, 422),
     ("link not a URL", {**GOOD, "link": "northgatehome.example"}, 422),
     ("empty body", {**GOOD, "body": ""}, 422),

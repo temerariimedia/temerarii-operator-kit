@@ -95,20 +95,25 @@
     "product": "app.siedata.dev"
   },
   "channels": {
-    "primary": [
+    "_note": "Shared channel calendar: all social, long form, and owned (blog / email / SMS). Brands may extend it (a podcast, a manual channel) without any pipeline change.",
+    "social": [
       "x",
       "linkedin",
       "instagram",
-      "youtube",
-      "tiktok"
-    ],
-    "secondary": [
       "facebook",
       "threads",
       "bluesky",
       "pinterest",
+      "tiktok",
+      "youtube"
+    ],
+    "longform": [
+      "youtube_longform"
+    ],
+    "owned": [
       "blog",
-      "email"
+      "email",
+      "sms"
     ]
   },
   "palette": {

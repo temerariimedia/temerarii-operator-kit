@@ -152,9 +152,21 @@ where a post came from, and "I am not sure" is not an answer you want to give ab
 own work. The check lives in code so that an unattributable payload is impossible to
 construct, rather than merely discouraged.
 
-**Notice what you did not have to configure:** `northgate-home` publishes to Google
-Business Profile, Nextdoor, email and SMS, and not to X or Bluesky. You did not tell it
-that. It came from the brand package, which is the whole point of exercises 1 and 3.
+**Notice what you did not have to configure.** Every brand runs the same base channel
+calendar — all social, long form, blog, email, SMS — but `northgate-home` also publishes a
+**podcast**, and you did not tell it that. It came from the brand package. Adding a channel
+is an edit to `governance/brand.json`, never a pipeline change. That is the whole point of
+exercises 1 and 3.
+
+**And notice what did not get sent.** `northgate-home` lists Nextdoor as `manual`: a real
+channel with a real audience and no publish API. Its payload is still built, still
+validated, and reported as needing a human — the mock will **refuse** it if you try to post
+it, deliberately.
+
+It would have been easier to leave manual channels out of the plan entirely. That is the
+wrong trade. A channel that silently disappears from the calendar is not noticed for weeks,
+and the failure surfaces as "why did we stop posting there?" long after the cause is cold.
+Work that needs a human is still work; it belongs on the plan, marked.
 
 ---
 

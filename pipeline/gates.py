@@ -20,7 +20,7 @@ import sys
 from collections.abc import Callable
 
 from .brand import active_brand, brand_json
-from .calendar import campaign_weeks, campaigns, load_all, load_campaign
+from .calendar import campaign_weeks, campaigns, load_all, load_campaign, load_goal
 from .schedule import NUM_WEEKS, fiscal_label
 from .voice import scan_brand
 
@@ -102,6 +102,16 @@ def gate_brand_package(brand: str) -> Result:
         problems.append(f"{brand}: governance/brand.json has no channels")
     if not bj.get("name"):
         problems.append(f"{brand}: governance/brand.json has no name")
+
+    # A brand with no GOAL.yaml places no campaigns — so gate_placement has nothing to
+    # compare and passes VACUOUSLY. That is how an incomplete brand package sailed through
+    # a full green run here: every gate reported PASS because the data they check was
+    # absent, not correct. Assert the package EXISTS before trusting checks made against it.
+    if not load_goal(brand):
+        problems.append(f"{brand}: no content/_context/GOAL.yaml — without it the placement "
+                        f"gate has nothing to check and passes vacuously")
+    elif not campaigns(brand):
+        problems.append(f"{brand}: GOAL.yaml places no campaigns")
     return (not problems), problems
 
 

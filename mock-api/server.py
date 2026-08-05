@@ -24,12 +24,19 @@ RECEIVED = Path(__file__).with_name("received.jsonl")
 
 REQUIRED = ("brand", "channel", "week", "body", "link", "source")
 LIMITS = {"sms": 160, "x": 280, "bluesky": 300}
+
+# Every brand runs the same channel calendar, so this is one set rather than a per-brand
+# map. It stays as an explicit allowlist because the real service has one: a typo'd
+# channel name should be REFUSED, not silently accepted and then never delivered.
 KNOWN = {
-    "temerarii-media": {"x", "linkedin", "instagram", "youtube", "tiktok", "facebook",
-                        "threads", "bluesky", "pinterest", "blog", "email"},
-    "northgate-home": {"google_business_profile", "local_seo", "facebook", "nextdoor",
-                       "email", "sms", "instagram", "youtube"},
+    "x", "linkedin", "instagram", "facebook", "threads", "bluesky", "pinterest",
+    "tiktok", "youtube", "youtube_longform", "podcast", "blog", "email", "sms",
 }
+
+# Channels with no publish API. The real service REFUSES these rather than accepting and
+# never delivering — an accepted-but-undelivered post is the worst outcome available,
+# because everything downstream reports success.
+MANUAL_ONLY = {"nextdoor"}
 
 
 def validate(p: dict) -> list[str]:
@@ -40,10 +47,12 @@ def validate(p: dict) -> list[str]:
     if errs:
         return errs
 
-    brand, channel = str(p["brand"]), str(p["channel"])
-    known = KNOWN.get(brand)
-    if known and channel not in known:
-        errs.append(f"channel {channel!r} is not enabled for brand {brand!r}")
+    channel = str(p["channel"])
+    if channel in MANUAL_ONLY:
+        errs.append(f"channel {channel!r} has no publish API — deliver it by hand "
+                    f"(build it with delivery=manual so it stays on the plan)")
+    elif channel not in KNOWN:
+        errs.append(f"unknown channel {channel!r}")
 
     limit = LIMITS.get(channel)
     if limit and len(str(p["body"])) > limit:

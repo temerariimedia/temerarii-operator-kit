@@ -31,7 +31,7 @@ sys.path.insert(0, str(KIT))
 from pipeline import gates as G  # noqa: E402
 from pipeline.brand import banned_words, brand_json, list_brands  # noqa: E402
 from pipeline.calendar import campaign_weeks, load_all  # noqa: E402
-from pipeline.publish import build_payloads, validate  # noqa: E402
+from pipeline.publish import build_payloads, channels, manual_channels, validate  # noqa: E402
 from pipeline.schedule import fiscal_label, place, quarter_of  # noqa: E402
 from pipeline.voice import scan_brand  # noqa: E402
 
@@ -150,7 +150,12 @@ def ex5_minimal_dirty_set() -> tuple[bool, str]:
 
 
 def ex6_publish_payloads() -> tuple[bool, str]:
-    """Payloads for northgate week 10 build, validate, and stay inside channel limits."""
+    """Payloads build and validate, and come from the BRAND PACKAGE rather than code.
+
+    All brands share a base channel calendar, so this cannot be checked by finding a
+    channel one brand lacks. It is checked the stronger way instead: the payload set must
+    equal exactly what the brand package declares — including the extras that brand adds.
+    """
     try:
         payloads = build_payloads(10, "northgate-home")
     except SystemExit as e:
@@ -159,13 +164,29 @@ def ex6_publish_payloads() -> tuple[bool, str]:
         return False, "no payloads built"
     if errs := validate(payloads):
         return False, "; ".join(errs[:3])
-    chans = {p["channel"] for p in payloads}
-    if "x" in chans or "bluesky" in chans:
-        return False, (f"northgate-home is a local trade brand and does not run X/Bluesky; "
-                       f"got {sorted(chans)} — channels must come from the brand package")
+
+    got = {p["channel"] for p in payloads}
+    want = set(channels("northgate-home"))
+    if got != want:
+        return False, (f"payload channels do not match the brand package: "
+                       f"missing {sorted(want - got)}, extra {sorted(got - want)}")
+
+    # northgate-home extends the base calendar with a podcast — proof that a brand can add
+    # a channel with no pipeline change.
+    if "podcast" not in got:
+        return False, "northgate-home declares a podcast but no payload was built for it"
+
+    # Manual channels must be BUILT and marked, never omitted. A channel that silently
+    # falls off the plan is not noticed for a month.
+    manual = {p["channel"] for p in payloads if p.get("delivery") == "manual"}
+    if manual != manual_channels("northgate-home"):
+        return False, (f"manual channels mismatch: marked {sorted(manual)}, "
+                       f"declared {sorted(manual_channels('northgate-home'))}")
+
     if any(not p.get("source", {}).get("campaign") for p in payloads):
         return False, "a payload has no source.campaign"
-    return True, f"{len(payloads)} payload(s) across {len(chans)} channel(s), all valid"
+    return True, (f"{len(payloads)} payload(s) across {len(got)} channel(s) "
+                  f"({len(manual)} manual), all matching the brand package")
 
 
 EXERCISES = {

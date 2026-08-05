@@ -3,7 +3,6 @@
   "tagline": "Heating, cooling, and plumbing for the north side.",
   "theme": "Local trade / residential service",
   "_note": "FICTIONAL BRAND. Built as the contrast case to temerarii-media: B2C not B2B, local not national, seasonal not thought-leadership, trust-and-urgency not minus-the-hype. If a person or system can run BOTH of these correctly, they are operating the mechanism rather than memorizing one brand.",
-
   "voice": {
     "tone": [
       "Plainspoken. Say what the job is, what it costs, and how long it takes.",
@@ -51,74 +50,155 @@
     ],
     "_banned_rationale": "Temerarii bans HYPE (revolutionary, 10x, game-changer). Northgate bans FEAR-SELLING AND PRESSURE (act now, silent killer, guaranteed forever). Same gate, opposite failure mode. A reviewer who has only pattern-matched 'no superlatives' will miss every violation in this brand -- which is exactly what the cross-brand exercise is testing."
   },
-
   "pillars": [
-    { "id": "emergency",   "label": "Emergency Repair",        "description": "No heat, no cooling, active leak. Same-day response." },
-    { "id": "maintenance", "label": "Maintenance Plans",       "description": "Twice-yearly tune-ups, priority scheduling, member pricing." },
-    { "id": "air_quality", "label": "Indoor Air Quality",      "description": "Filtration, humidity, duct condition." },
-    { "id": "water",       "label": "Water Heaters & Plumbing","description": "Tank, tankless, repipe, drain." },
-    { "id": "efficiency",  "label": "Efficiency & Rebates",    "description": "System replacement, utility rebates, financing." }
+    {
+      "id": "emergency",
+      "label": "Emergency Repair",
+      "description": "No heat, no cooling, active leak. Same-day response."
+    },
+    {
+      "id": "maintenance",
+      "label": "Maintenance Plans",
+      "description": "Twice-yearly tune-ups, priority scheduling, member pricing."
+    },
+    {
+      "id": "air_quality",
+      "label": "Indoor Air Quality",
+      "description": "Filtration, humidity, duct condition."
+    },
+    {
+      "id": "water",
+      "label": "Water Heaters & Plumbing",
+      "description": "Tank, tankless, repipe, drain."
+    },
+    {
+      "id": "efficiency",
+      "label": "Efficiency & Rebates",
+      "description": "System replacement, utility rebates, financing."
+    }
   ],
-
   "strategy": {
     "mission": "Be the company north-side homeowners call twice: once when something breaks, and every season after.",
     "icp": "Homeowners, 8-40 year old houses, within 25 minutes of the shop.",
     "primary_conversion": "Booked appointment (online or phone).",
     "secondary_conversion": "Maintenance plan enrollment.",
     "values": [
-      { "name": "Show up in the window",   "body": "The arrival window we give is the one we keep. If we're late, we call before we're late." },
-      { "name": "Price before wrench",     "body": "The homeowner approves the number before any work starts. No line-item surprises." },
-      { "name": "Say when it's fine",      "body": "If a system has years left, we say so and leave. That is the entire referral engine." }
+      {
+        "name": "Show up in the window",
+        "body": "The arrival window we give is the one we keep. If we're late, we call before we're late."
+      },
+      {
+        "name": "Price before wrench",
+        "body": "The homeowner approves the number before any work starts. No line-item surprises."
+      },
+      {
+        "name": "Say when it's fine",
+        "body": "If a system has years left, we say so and leave. That is the entire referral engine."
+      }
     ]
   },
-
   "domains": {
     "primary": "northgatehome.example",
     "booking": "northgatehome.example/book"
   },
-
   "channels": {
-    "_note": "Deliberately NOT the Temerarii 9. A local trade brand lives on local search and neighborhood platforms; it has no business chasing X or Bluesky. This difference is the point -- it forces the channel layer to be parameterized rather than assumed.",
-    "primary": ["google_business_profile", "local_seo", "facebook", "nextdoor", "email", "sms"],
-    "secondary": ["instagram", "youtube"],
-    "excluded": ["x", "bluesky", "tiktok", "threads", "pinterest", "linkedin"]
+    "_note": "Shared channel calendar: all social, long form, and owned (blog / email / SMS). Brands EXTEND it rather than replace it — this one adds a podcast. `manual` lists channels we publish to by hand: payloads are built and validated, never auto-posted.",
+    "social": [
+      "x",
+      "linkedin",
+      "instagram",
+      "facebook",
+      "threads",
+      "bluesky",
+      "pinterest",
+      "tiktok",
+      "youtube"
+    ],
+    "longform": [
+      "youtube_longform",
+      "podcast"
+    ],
+    "owned": [
+      "blog",
+      "email",
+      "sms"
+    ],
+    "manual": [
+      "nextdoor"
+    ]
   },
-
   "palette": {
     "primary": "#123A5E",
-    "accent":  "#E4711B",
-    "bg":      "#FFFFFF",
-    "fg":      "#1B2430"
+    "accent": "#E4711B",
+    "bg": "#FFFFFF",
+    "fg": "#1B2430"
   },
-
   "fonts": {
     "display": "Source Sans 3",
-    "body":    "Source Sans 3",
-    "mono":    "IBM Plex Mono"
+    "body": "Source Sans 3",
+    "mono": "IBM Plex Mono"
   },
-
   "tokens_version": "1.0.0",
-
   "color": {
-    "brand":   { "500": "#123A5E", "600": "#0E2E4B", "400": "#2A5A85" },
-    "accent":  { "500": "#E4711B", "600": "#C25C0F", "400": "#F08F45" },
-    "surface": { "bg": "#FFFFFF", "panel": "#F4F6F8", "line": "#DCE2E8" },
-    "fg":      { "1": "#1B2430", "2": "#47535F", "3": "#7A8794" },
-    "state":   { "ok": "#2E7D52", "warn": "#B4791C", "err": "#B3402F" }
+    "brand": {
+      "500": "#123A5E",
+      "600": "#0E2E4B",
+      "400": "#2A5A85"
+    },
+    "accent": {
+      "500": "#E4711B",
+      "600": "#C25C0F",
+      "400": "#F08F45"
+    },
+    "surface": {
+      "bg": "#FFFFFF",
+      "panel": "#F4F6F8",
+      "line": "#DCE2E8"
+    },
+    "fg": {
+      "1": "#1B2430",
+      "2": "#47535F",
+      "3": "#7A8794"
+    },
+    "state": {
+      "ok": "#2E7D52",
+      "warn": "#B4791C",
+      "err": "#B3402F"
+    }
   },
-
   "type": {
-    "scale": { "xs": "12px", "sm": "14px", "base": "16px", "lg": "20px", "xl": "26px", "2xl": "34px" },
+    "scale": {
+      "xs": "12px",
+      "sm": "14px",
+      "base": "16px",
+      "lg": "20px",
+      "xl": "26px",
+      "2xl": "34px"
+    },
     "rule": "Body copy never below 16px. Homeowners read this on a phone, often in a hurry, sometimes in a cold house."
   },
-
-  "space":  { "unit": "4px", "gutter": "16px" },
-  "radius": { "sm": "4px", "md": "8px", "lg": "14px", "pill": "999px" },
-
+  "space": {
+    "unit": "4px",
+    "gutter": "16px"
+  },
+  "radius": {
+    "sm": "4px",
+    "md": "8px",
+    "lg": "14px",
+    "pill": "999px"
+  },
   "motion": {
     "sanctioned": [
-      { "id": "settle",   "label": "Settle",   "timing": "220ms ease-out" },
-      { "id": "reveal",   "label": "Reveal",   "timing": "320ms ease-out" }
+      {
+        "id": "settle",
+        "label": "Settle",
+        "timing": "220ms ease-out"
+      },
+      {
+        "id": "reveal",
+        "label": "Reveal",
+        "timing": "320ms ease-out"
+      }
     ],
     "forbidden": [
       "countdown timers on anything that is not a genuine scheduled event",
@@ -126,7 +206,6 @@
       "any motion that implies time pressure the customer does not actually have"
     ]
   },
-
   "visual_rules": {
     "accent_cap": "Orange accent on no more than one element per frame. It marks the action, not the mood.",
     "photography": "Real trucks, real technicians, real houses in this metro. No stock photography of models in clean coveralls.",

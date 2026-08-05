@@ -1,0 +1,29 @@
+# Temerarii Media — trimmed for the operator kit.
+#
+# The real package places twelve campaigns across a full year. This carries ONE campaign
+# and ONE authored week (W27), which is enough to prove the mechanism and small enough to
+# read in a sitting.
+#
+# Compare the anchor below with northgate-home's. That single value is why the same week
+# number lands in July for one brand and September for the other. Every date in the system
+# derives from it, which is why nothing hardcodes a calendar year.
+brand: temerarii-media
+north_star: "Hyper-accelerate revenue and attention for the brands we partner with — proving the system on ourselves first."
+
+year:
+  fiscal: 2026
+  model: "4-4-5"          # 13 weeks/quarter
+  anchor: 2026-01-04      # Sun of fiscal W1 (FIXED)
+  num_weeks: 52
+
+schedule:
+  # Campaigns are placed DECLARATIVELY: a start week and a number of beats, never a
+  # hand-written list of week numbers. Postponing this campaign is a one-line change to
+  # `start_week` — and the placement gate then requires the authored weeks to move with
+  # it, which is the check that catches a half-finished postponement.
+  campaigns:
+    - id: studio-launch
+      label: "Studio Launch — the studio is open"
+      pillar: brand
+      start_week: 27      # bump to postpone the whole run
+      beats: 1            # the kit ships W27 only; the real campaign runs 27-30

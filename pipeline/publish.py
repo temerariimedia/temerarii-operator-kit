@@ -33,12 +33,38 @@ LIMITS = {"sms": 160, "x": 280, "bluesky": 300}
 
 
 def channels(brand: str | None = None) -> list[str]:
+    """Every channel this brand publishes to, in declaration order.
+
+    Reads whatever groups the brand package defines rather than looking for specific key
+    names. Brands currently share one channel calendar grouped as social / longform /
+    owned, but a package that regroups them — or adds a group — must keep working without
+    a code change. That is the whole contract: the pipeline knows there ARE channels, and
+    the brand package alone decides which.
+    """
     ch = brand_json(brand).get("channels") or {}
     out: list[str] = []
-    for key in ("primary", "secondary"):
-        out.extend(ch.get(key) or [])
-    # `_note` keys are internal commentary in the brand package, never data.
-    return [c for c in out if not str(c).startswith("_")]
+    for key, val in ch.items():
+        # `_`-prefixed keys are internal commentary in the brand package, never data.
+        if str(key).startswith("_") or not isinstance(val, list):
+            continue
+        out.extend(str(c) for c in val if not str(c).startswith("_"))
+    return list(dict.fromkeys(out))  # dedupe, preserve order
+
+
+def manual_channels(brand: str | None = None) -> set[str]:
+    """Channels with no publish API — delivered by a human.
+
+    These are real destinations, not second-class ones. Nextdoor is where a local trade
+    brand's audience actually is; a podcast host may want a human in the loop. What they
+    have in common is that no API call ships them.
+
+    They are still built and still validated. The alternative — omitting them — means the
+    channel quietly falls off the calendar and nobody notices for a month. A payload that
+    is marked `manual` appears in the plan, gets checked against the same rules, and shows
+    up on someone's list. Marking work as needing a human is not the same as skipping it.
+    """
+    ch = brand_json(brand).get("channels") or {}
+    return {str(c) for c in (ch.get("manual") or []) if not str(c).startswith("_")}
 
 
 def build_payloads(week: int, brand: str | None = None) -> list[dict]:
@@ -50,6 +76,7 @@ def build_payloads(week: int, brand: str | None = None) -> list[dict]:
     wd = weeks[week]
     anchor = anchor_date(b)
     label = fiscal_label(week, anchor.year)
+    manual = manual_channels(b)
     out: list[dict] = []
     for ch in channels(b):
         body = wd.tagline or wd.name
@@ -61,6 +88,8 @@ def build_payloads(week: int, brand: str | None = None) -> list[dict]:
             "scheduled_for": week_sunday(anchor, week).isoformat(),
             "body": body,
             "link": build_utm(brand=b, campaign=wd.campaign_id, channel=ch, week=week),
+            # "api" ships on --post; "manual" is built, validated and listed for a human.
+            "delivery": "manual" if ch in manual else "api",
             # The traceability contract. Never synthesise this.
             "source": {"campaign": wd.campaign_id, "week": week, "field": "tagline"},
         })
@@ -85,8 +114,14 @@ def validate(payloads: list[dict]) -> list[str]:
 
 
 def post(payloads: list[dict], url: str = MOCK_API) -> int:
+    """Send the API-delivered payloads. Manual ones are reported, never silently dropped."""
+    manual = [p for p in payloads if p.get("delivery") == "manual"]
+    if manual:
+        print(f"  {len(manual)} payload(s) need a human — not sent:")
+        for p in manual:
+            print(f"    - {p['channel']}: {p['body'][:60]}")
     ok = 0
-    for p in payloads:
+    for p in [x for x in payloads if x.get("delivery") != "manual"]:
         req = urllib.request.Request(
             url, data=json.dumps(p).encode("utf-8"),
             headers={"Content-Type": "application/json"}, method="POST")
@@ -115,8 +150,10 @@ def main(argv=None) -> int:
 
     b = active_brand(a.brand)
     payloads = build_payloads(a.week, b)
+    n_manual = sum(1 for p in payloads if p.get("delivery") == "manual")
     print(f"PUBLISH — brand={b} week={a.week} · {len(payloads)} payload(s) "
-          f"across {len(channels(b))} channel(s)")
+          f"across {len(channels(b))} channel(s)"
+          + (f" ({n_manual} manual)" if n_manual else ""))
 
     errs = validate(payloads)
     if errs:
@@ -134,9 +171,15 @@ def main(argv=None) -> int:
         print(json.dumps(payloads, indent=2)[:2000])
         return 0
     if a.post:
+        # Count against the API-delivered set, not the total. A manual channel that was
+        # correctly held back is a success, and exiting non-zero for it would train
+        # everyone to ignore this command's exit code.
+        sendable = [p for p in payloads if p.get("delivery") != "manual"]
         ok = post(payloads)
-        print(f"accepted {ok}/{len(payloads)}")
-        return 0 if ok == len(payloads) else 1
+        print(f"accepted {ok}/{len(sendable)} sent"
+              + (f" · {len(payloads) - len(sendable)} held for manual delivery"
+                 if len(sendable) != len(payloads) else ""))
+        return 0 if ok == len(sendable) else 1
     return 0
 
 

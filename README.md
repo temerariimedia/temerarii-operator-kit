@@ -45,13 +45,59 @@ The two brands are unalike on purpose:
 | Market | B2B, national | B2C, one metro |
 | Fiscal year opens | January | **March** |
 | Voice bans | **hype** — "revolutionary", "game-changer" | **fear-selling** — "act now", "silent killer" |
-| Channels | 9 social + blog | local search, Nextdoor, email, SMS — **no X, no Bluesky** |
+| Channels | the shared calendar | shared calendar **+ a podcast**, and Nextdoor as **manual** |
 
-Read that voice row again. The rules are not stricter or looser on one side, they are
-**inverted**. Copy that is perfectly safe for one brand is a violation for the other.
-Any code that reaches for a default instead of taking a brand argument will be silently
-wrong for exactly one of them — and silence is the problem. You will not get an error.
-You will get a gate that reports PASS on copy it should have rejected.
+### Why this is harder than it looks
+
+The obvious version of "support multiple brands" is a config file with a name and a colour
+in it. That is not what is happening here. Look at what actually varies:
+
+**The fiscal year opens in a different month.** Not a display preference — every date in
+the system derives from a brand's anchor. Week 27 is a July week for one brand and a
+September week for the other. Any code that hardcodes a January anchor produces dates that
+are *plausible* and wrong, which is the hardest kind of wrong to notice.
+
+**The voice rules are inverted.** This is the important one, so read the row again. The
+rules are not stricter on one side and looser on the other. `temerarii-media` bans **hype**;
+`northgate-home` bans **fear and pressure**. Copy that is perfectly safe for one is a
+violation for the other, and vice versa. There is no ordering, no superset, no "strict mode"
+you could implement once and reuse.
+
+**Channels are shared but extensible.** Every brand runs the same base calendar — all
+social, long form, and owned (blog, email, SMS). `northgate-home` adds a podcast. It did not
+require a pipeline change, and that is the test: a brand should be able to add a destination
+by editing its own package.
+
+**Not every channel has an API.** `northgate-home` lists Nextdoor as `manual` — a real
+channel where the audience genuinely is, with no automated publishing. The pipeline still
+builds and validates those payloads, then marks them for a human. Dropping them would be
+easier and much worse: a channel that silently falls off the plan is not noticed for a month.
+
+### The failure this design prevents
+
+Suppose one function reaches for a default instead of taking the brand it was given —
+a module-level cache, a hardcoded path, a `brand or DEFAULT_BRAND` that swallows an empty
+string. You will not get an exception. You will get:
+
+- A **voice gate that reports PASS** on copy containing violations, because it checked the
+  other brand's word list.
+- **Dates that look right** and are two months off.
+- **Payloads for channels the brand does not run**, accepted and never delivered.
+
+Every one of those is worse than a crash. A crash stops the line and gets fixed in an hour.
+A silently wrong gate manufactures confidence — it tells you the work was checked when it
+was not, and you find out weeks later from someone outside the company.
+
+That is why `pipeline/brand.py` is the first file to read, why `brand_json()` is cached
+**per brand**, and why every public function in this kit takes `brand` as an argument even
+when it feels like boilerplate. Exercise 3 walks you into the exact bug. It is not
+hypothetical — it shipped in the system this kit is modelled on, and it was found only
+because someone ran a second brand through it and noticed the planted violations were not
+firing.
+
+**The general form, worth carrying past this kit:** when a system serves N things, the
+dangerous bug is never the one that breaks all N. It is the one that works perfectly for
+whichever thing you happened to test with.
 
 Both brands are fictional or public content. Nothing here is confidential.
 
