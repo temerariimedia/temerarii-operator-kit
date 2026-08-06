@@ -2,33 +2,73 @@
 
 ## How
 
+**One submission, two parts.** Send them together — a repo link with no video, or a video
+with no repo, is half an answer.
+
+### 1 · The repo
+
 1. **Fork** this repository.
 2. Work on a branch. Commit as you go — we read the history.
 3. Commit your `training/answers/` (it is gitignored here so the reference repo carries no
    answer key; in your fork we want to see it — `git add -f training/answers`).
 4. Open a pull request **against your own fork**, not this repo.
-5. Send us the link.
 
-CI runs `training/grade.py` on your PR automatically, so you will see the same scorecard
-we do before we ever look at it.
+CI runs `training/grade.py` on your PR, so you see the same scorecard we do before we ever
+look at it.
 
-## What to include in the PR description
+### 2 · The render
 
-Short. Four things:
+```bash
+cd remotion
+npm install
+npm run render
+```
+
+**Attach both files to the message** — `w10-16x9.mp4` and `w10-9x16.mp4`. Do not zip them;
+a zip cannot be previewed, so it becomes something we have to download before we can look.
+A link is fine if they will not attach, as long as it is actually open.
+
+Full detail in `RENDERED-SAMPLE.md`. The short version: it is **new output from this
+pipeline**, not a portfolio piece, and the pair of aspects is the point.
+
+### 3 · Send both in one message
+
+The PR link, both videos, and the write-up below. One message.
+
+## What to include in the message
+
+Short. Nothing needs to be a document.
+
+**On the exercises:**
 
 - **Your scorecard** (paste the output).
 - **Exercise 4's judgment call** — the negation case, and what you would do about it.
 - **Anything you changed beyond the exercises**, and why.
-- **How long it took.** Honestly. We use this to calibrate the exercise, not to compare
-  candidates against each other.
+
+**On the render:**
+
+- **What broke first**, and how you fixed it. Something will.
+- **How long it took**, including setup, honestly.
+- **One thing wrong with the output** that you would fix given a day.
+- **One thing about the pipeline you would change** — a gate you would add, a step you
+  would automate, a decision you would move.
+- **What in your own workflow is already automated**, and what you still do by hand
+  because automating it was not worth it.
+
+**And:** how long the whole thing took. We use that to calibrate the exercise, not to
+compare candidates against each other.
 
 ## Time
 
-**Around three hours.** If you are well past that and stuck, stop and send what you have
-with a note about where you got stuck. That is a genuinely useful submission — we would
-rather see clear thinking that ran out of road than a perfect score that took a weekend.
+**Exercises: about an hour.** Do 1–3 for qualification; the rest if you want to.
+**Render: an evening at most**, including install.
 
-Nothing here is timed and there is no bonus for speed.
+If you are well past that and stuck, **stop and send what you have** with a note about
+where. That is a genuinely useful submission — we would rather see clear thinking that ran
+out of road than a perfect score that took a weekend.
+
+Nothing here is timed and there is no bonus for speed. If the render takes longer than an
+evening, something is wrong on our side and we want to hear about it.
 
 ## What we are looking for
 
