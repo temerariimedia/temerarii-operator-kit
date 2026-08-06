@@ -30,6 +30,28 @@ answer from you.
 
 ---
 
+## What it pays
+
+| Track | Round 1 | Round 2 | Final |
+|---|---|---|---|
+| **Technical Content Operator** — this seat | **$150/wk** | **$240/wk** | **$456/wk** |
+| Creative & Brand Quality Lead | $125/wk | $200/wk | $380/wk |
+| Live Broadcast Producer | $125/wk | $200/wk | $380/wk |
+| Executive Manager | $100/wk | $160/wk | $304/wk |
+
+Rates rise as the field narrows — 13 weeks, the field cut twice, the finalist converting to
+an ongoing contract. **Fixed-price milestones against a deliverable, never hourly.** Paid
+biweekly on a published calendar; payments only ever move earlier, never later.
+
+**Qualification — Stage 1 and the curriculum — is unpaid.** It runs on a fictional brand
+against a local mock, and nothing you produce in it is used by us or ships anywhere. That is
+what makes it qualification rather than unpaid work, and why it takes well under an hour.
+**Everything after selection is paid.**
+
+Full detail, the season calendar and the elimination structure: **`PROGRAM.md`**.
+
+---
+
 ## The one idea
 
 **A brand is a data package, not a special case in the code.**
@@ -170,15 +192,19 @@ was fifteen identical posts. Nothing failed, so nothing got fixed.
 ## Where this sits in the process
 
 ```
-  Stage 1  ─▶  Stage 2      ─▶  Tier 2         ─▶  Round 1
-  qualify      CURRICULUM      TIER-2.md          the seat
-  unpaid       ex 1–3          bring us a brand   FROM-KIT-TO-PRODUCTION.md
-  no new work  ~30 min · $15   paid, ~1 day
+  QUALIFY                        ─▶  SELECTED  ─▶  Round 1
+  Stage 1 + CURRICULUM               an offer      TIER-2.md is your
+  unpaid · ~30-45 min                              first paid milestone
 ```
 
-Everything is paid from Stage 2 onward, and the Stage 2 fee is **credited against your
-first milestone** — you are never paid twice for the same work and never asked to work
-free.
+**Qualification is unpaid, and it is deliberately short.** Stage 1 asks only for work you
+have already done. The curriculum runs against a **fictional brand and a local mock** —
+nothing you produce in it is used by us, ships anywhere, or has any value to us. That is
+what makes it qualification rather than unpaid work, and it is why it is measured in
+minutes rather than days.
+
+**Paid work begins the moment you are selected.** `TIER-2.md` is your first Round 1
+milestone, at your Round 1 rate — not another test.
 
 ## Read in this order
 

@@ -47,8 +47,7 @@ evening — if something is genuinely unclear, that is our bug, and we would lik
 
 ## Two things this exercise is not
 
-**It is not unpaid work.** Nothing you produce here ships or is used. It runs against a
-fictional brand and a mock API, and it exists solely so you can demonstrate the skill.
+**It is unpaid, and it is qualification rather than work.** Nothing you produce here ships, is used by us, or has any value to us — it runs on a fictional brand against a local mock. That is the distinction, and it is why this is measured in minutes. Everything after selection is paid.
 
 **It does not need any credential.** There are no API keys in this kit and there is no
 reason to add one. If any instruction appears to ask you for a real key, a password, or

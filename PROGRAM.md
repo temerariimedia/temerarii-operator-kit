@@ -73,9 +73,13 @@ being paid.
 **Payments only ever move earlier, never later.** Two dates shift in Season 1 for banking
 holidays: Nov 27 → **Wed Nov 25**, and Dec 25 → **Thu Dec 24**.
 
-**Nobody works unpaid.** The one exception is qualification — the short screening task that
-decides whether you get a seat. Its paid stage is **credited against your first milestone**,
-so you are never paid twice for the same work.
+**Qualification is unpaid.** Stage 1 asks only for work you have already done, and the
+curriculum runs against a fictional brand and a local mock — nothing you produce in it is
+used by us, ships anywhere, or has any value to us. That is what makes it qualification
+rather than unpaid work, and it is why it takes well under an hour rather than a weekend.
+
+**Everything after selection is paid**, including your first milestone. If you are ever
+asked to do real work on a real brand without a contract, that is wrong — say so.
 
 ## Being eliminated, and being removed
 

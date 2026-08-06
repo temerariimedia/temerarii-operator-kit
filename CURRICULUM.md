@@ -13,6 +13,11 @@ python training/grade.py --exercise 3 # just one
 
 A fresh clone scores **5/6**. Exercise 5 is the one waiting on you.
 
+**This is unpaid, and it is short on purpose.** Everything here runs against a fictional
+brand and a local mock — nothing you produce is used by us or ships anywhere, which is what
+makes it qualification rather than unpaid work. If it starts feeling like a job, stop and
+tell us: that would mean we specified it badly. Paid work begins when you are selected.
+
 ---
 
 ## 1 · Both brands load, and their gates pass

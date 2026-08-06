@@ -5,7 +5,13 @@ machine. This is the other thing: proof you can **take the system to a company i
 seen.** That is the actual job, and it is what the seat is decided on.
 
 **This is paid work at your Round 1 rate, not another test.** If you are reading this, you
-have already been selected. Nothing here is speculative and nothing you build is thrown away.
+have already been selected.
+
+That is the line: **qualification — Stage 1 and the curriculum — is unpaid**, because it
+runs on a fictional brand and a local mock and produces nothing we use. **This is the other
+side of it.** You are building something real, on a business you chose, and you are paid
+for it from the first hour. Nothing here is speculative and nothing you build is thrown
+away.
 
 Budget about a day. There is no clock.
 
