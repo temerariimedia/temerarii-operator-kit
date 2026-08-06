@@ -186,6 +186,7 @@ free.
 
 | | |
 |---|---|
+| **`PROGRAM.md`** | **Read this first.** What you are applying to — the live show, the 13 weeks, elimination every 4th Saturday, the pay table, and what a week of the job actually looks like. |
 | **`CURRICULUM.md`** | The six exercises. About half an hour; do 1–3 for Stage 2. A fresh clone scores 5/6 — exercise 5 is waiting on you. |
 | **`TIER-2.md`** | **Bring us a brand.** Study the two reference packages, then build a third for a business you choose. Paid at your Round 1 rate. This is what the seat is actually decided on. |
 | **`SUBMISSION.md`** | How to submit, what to include, and how long it should take. |
