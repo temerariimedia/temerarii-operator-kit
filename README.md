@@ -93,7 +93,13 @@ against a local mock, and nothing you produce in it is used by us or ships anywh
 what makes it qualification rather than unpaid work, and why it takes well under an hour.
 **Everything after selection is paid.**
 
+**After the 13 weeks**, the finalist converts to an ongoing **quarterly contract — roughly
+$5,000 per quarter to start (~$20–21K annualised)**, renewed quarterly, rising as the brands
+generate revenue. It is stated plainly because four people have now asked, and because
+finding out in week nine helps nobody.
+
 Full detail, the season calendar and the elimination structure: **`PROGRAM.md`**.
+Money, time, and how qualification actually works: **`FAQ.md`**.
 
 The whole programme is also public, including every one of the 65 episodes, the Saturday
 elimination format and the pay ladder for all four tracks:
@@ -262,6 +268,7 @@ milestone, at your Round 1 rate — not another test.
 
 | | |
 |---|---|
+| **`FAQ.md`** | **Money, time, and what qualifies you.** Every question here has been asked by more than one candidate — including what the role pays after week 13. |
 | **`PROGRAM.md`** | **Read this first.** What you are applying to — the live show, the 13 weeks, elimination every 4th Saturday, the pay table, and what a week of the job actually looks like. |
 | **`CURRICULUM.md`** | The six exercises. About half an hour; do 1–3 for Stage 2. A fresh clone scores 5/6 — exercise 5 is waiting on you. |
 | **`TIER-2.md`** | **Bring us a brand.** Study the two reference packages, then build a third for a business you choose. Paid at your Round 1 rate. This is what the seat is actually decided on. |
