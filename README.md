@@ -39,8 +39,30 @@ answer from you.
 | Live Broadcast Producer | $125/wk | $200/wk | $380/wk |
 | Executive Manager | $100/wk | $160/wk | $304/wk |
 
-Rates rise as the field narrows — 13 weeks, the field cut twice, the finalist converting to
-an ongoing contract. **Fixed-price milestones against a deliverable, never hourly.** Paid
+### How the field narrows
+
+**13 weeks. The field is cut twice.** This applies to all four seats identically — nobody
+is exempt and nobody is safe by default.
+
+```
+  Round 1          Round 2          Final
+  weeks 1–4        weeks 5–8        weeks 9–13
+  3 per track      2 per track      1 per track
+  12 on the show   8                4
+  ends Sat Nov 7   ends Sat Dec 5   ends Sat Jan 9
+  4 leave          4 leave          finale
+```
+
+**Elimination streams run every 4th Saturday**, live. One person per track goes home each
+time, and the decision is read from the system — registry entries executed, gates passed,
+work published — not from how anyone felt about you.
+
+**Your counterpart speaks about you on air** at each elimination. Yours is the Creative
+Lead. They are not asked to be kind; they are asked to be accurate.
+
+**Rates rise because the work does.** Fewer people means more each, so a Technical Operator
+who reaches the final is on **three times** their Round 1 rate. The finalist converts to an
+ongoing contract. **Fixed-price milestones against a deliverable, never hourly.** Paid
 biweekly on a published calendar; payments only ever move earlier, never later.
 
 **Qualification — Stage 1 and the curriculum — is unpaid.** It runs on a fictional brand
