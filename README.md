@@ -233,6 +233,7 @@ milestone, at your Round 1 rate — not another test.
 | **`CURRICULUM.md`** | The six exercises. About half an hour; do 1–3 for Stage 2. A fresh clone scores 5/6 — exercise 5 is waiting on you. |
 | **`TIER-2.md`** | **Bring us a brand.** Study the two reference packages, then build a third for a business you choose. Paid at your Round 1 rate. This is what the seat is actually decided on. |
 | **`SUBMISSION.md`** | How to submit, what to include, and how long it should take. |
+| **`RENDERED-SAMPLE.md`** | **Send one 15–30s video you have already made**, in any tool. Two minutes to read, nothing to install. |
 | **`FROM-KIT-TO-PRODUCTION.md`** | **Read before day one.** What changes when you move from this kit to the real system — what is the same, what is bigger, what the kit deliberately left out (rendering), and what your first week looks like. |
 
 ## What this kit is not
@@ -240,10 +241,15 @@ milestone, at your Round 1 rate — not another test.
 It is a **slice** — 26 files against roughly 6,000 in production. Same shape, same rules,
 same choke points; there is simply more of it.
 
-Two things are deliberately absent. **Rendering** — Remotion, dual aspect ratios, audio
-muxed to −16 LUFS — is a real part of the job, excluded here because it needs headless
-Chrome and a working render path, and we would rather test your judgment than your ability
-to install a toolchain. You will be trained on it and not knowing it now costs you nothing.
+**Rendering** — Remotion, dual aspect ratios, audio muxed to −16 LUFS — is a real part of
+the job and is absent from these exercises, because it needs headless Chrome and a working
+render path and we would rather test your judgment than your ability to install a
+toolchain.
+
+**That is not the same as saying we do not want to see rendered work.** We do — just work
+you have *already made*, in whatever tool you already use, not something built for us over
+a weekend. One 15–30 second piece. See **`RENDERED-SAMPLE.md`**; it takes two minutes to
+read and nothing to install.
 And **credentials**: there are none, there is no way to add one usefully, and that does not
 change after you are hired. `FROM-KIT-TO-PRODUCTION.md` explains why that is the design
 rather than a probation period.

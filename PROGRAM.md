@@ -79,6 +79,11 @@ rather than unpaid work, and it is why it takes well under an hour rather than a
 **Everything after selection is paid**, including your first milestone. If you are ever
 asked to do real work on a real brand without a contract, that is wrong — say so.
 
+**One thing we do ask to see: a short rendered piece you have already made.** Any tool,
+15–30 seconds, from your existing work. Not something built for this application — that
+would be unpaid work we did not ask for, and it tells us less than a rough thing you made
+last year for a real reason. `RENDERED-SAMPLE.md` has the detail.
+
 ## Being eliminated, and being removed
 
 These are different and worth understanding before you sign anything.
