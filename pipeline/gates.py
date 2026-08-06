@@ -88,6 +88,24 @@ def gate_voice(brand: str) -> Result:
                      for x in v]
 
 
+def gate_voice_negation_review(brand: str) -> Result:
+    """Banned-term hits under negation must be decided by a human, not the word list.
+
+    WHY: northgate planted a line that argues *against* fear-selling using the word
+    "dangerous". The voice gate correctly flags the token and incorrectly treats it as
+    the same class of failure as "Don't wait". Leaving that ambiguity as a silent PASS
+    teaches operators to override the gate by feel; leaving it as an undifferentiated
+    FAIL teaches them to rewrite every hit without reading. Surface the shape so the
+    decision is explicit: rewrite, or record an override with a reason.
+    """
+    problems = [
+        (f"W{x['week']} {x['campaign']}/{x['field']}: banned {x['word']!r} under "
+         f"negation — review (rewrite or override), do not auto-pass")
+        for x in scan_brand(brand) if x.get("negation")
+    ]
+    return (not problems), problems
+
+
 def gate_brand_package(brand: str) -> Result:
     """A brand must carry its own rails — never inherit another brand's by accident.
 
@@ -215,6 +233,7 @@ GATES: dict[str, Callable[[str], Result]] = {
     "year_boundary": gate_year_boundary,
     "completeness": gate_completeness,
     "voice": gate_voice,
+    "voice_negation_review": gate_voice_negation_review,
     "brand_package": gate_brand_package,
 }
 

@@ -24,6 +24,23 @@ from .brand import active_brand, banned_words
 from .calendar import load_all
 
 
+_NEGATION = re.compile(
+    r"\b(?:not|never|no|n't|isn't|aren't|wasn't|weren't|doesn't|don't|didn't)\b",
+    re.IGNORECASE,
+)
+
+
+def under_negation(text: str, at: int, window: int = 90) -> bool:
+    """True when a banned-term hit sits in the shadow of a negation.
+
+    A word list cannot see intent. "spring is dangerous" and "not … because spring is
+    dangerous" both contain the same token; only one is fear-selling. Flagging the
+    shape keeps the hard ban list blunt and forces a human decision instead of teaching
+    the gate to auto-pass patterns it will get wrong both ways.
+    """
+    return bool(_NEGATION.search(text[max(0, at - window):at]))
+
+
 def scan_text(banned: list[str], field: str, text: str) -> list[dict]:
     """Find banned words in one string. Word-boundary matched so 'act now' does not
     fire on 'contract nowhere', and case-insensitive so 'Act Now' is caught too."""
@@ -34,6 +51,7 @@ def scan_text(banned: list[str], field: str, text: str) -> list[dict]:
         pat = r"\b" + re.escape(w).replace(r"\ ", r"\s+") + r"\b"
         for m in re.finditer(pat, text, flags=re.IGNORECASE):
             hits.append({"field": field, "word": w, "at": m.start(),
+                         "negation": under_negation(text, m.start()),
                          "context": text[max(0, m.start() - 40):m.end() + 40].strip()})
     return hits
 
