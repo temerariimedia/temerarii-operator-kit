@@ -18,6 +18,16 @@ jobs:
         with:
           python-version: "3.11"
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Storyboard parser — LF and Windows CRLF
+        run: node --test remotion/scripts/storyboard.test.mjs
+
+      - name: Storyboard extraction smoke check
+        run: node remotion/scripts/extract.mjs
+
       - name: Install dependencies
         run: pip install -r requirements.txt
 

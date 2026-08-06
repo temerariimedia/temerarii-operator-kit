@@ -4,6 +4,7 @@
   "private": true,
   "description": "The render half of the pipeline — one composition, driven by authored data.",
   "scripts": {
+    "test": "node --test scripts/storyboard.test.mjs",
     "prepare-data": "node scripts/extract.mjs",
     "render:16x9": "npm run prepare-data && remotion render SceneReel out/w10-16x9.mp4",
     "render:9x16": "npm run prepare-data && remotion render SceneReelVertical out/w10-9x16.mp4",

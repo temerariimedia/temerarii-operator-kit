@@ -1,0 +1,9 @@
+10 days.Mon.social[2] dangerous
+10 days.Thu.social[2] don't wait
+10 days.Sat.email_body cheapest
+
+Judgment note:
+The "dangerous" match is a useful gate hit but not automatically a voice violation in
+context. The sentence says spring is not dangerous, so it argues against fear-selling.
+I would keep the gate result visible and ask the Creative Lead for a recorded decision
+rather than silently overriding the gate or rewriting approved brand copy myself.
