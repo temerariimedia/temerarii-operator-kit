@@ -37,7 +37,9 @@ the same change as the fix.**
 Candidate gates that do not exist yet, if you want somewhere to start:
 
 - **Aspect parity** — every asset that exists in 16:9 also exists in 9:16
-- **Audio present** — a video track with a silent audio stream is a real and common failure
+- **Audio present** — a video track with a silent audio stream is a real and common failure.
+  **The kit render is a live example: it emits a silent track.** Deliberately — see
+  `RENDERED-SAMPLE.md`. It is the one gate here you can write and watch fail today.
 - **Duration sanity** — rendered length matches `length_frames / fps` from the storyboard
 - **Safe area** — on-screen text within the vertical safe region
 - **Loudness** — measured LUFS within tolerance of the target

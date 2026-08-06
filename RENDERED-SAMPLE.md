@@ -26,10 +26,31 @@ during a broadcast.
 ```bash
 cd remotion
 npm install
-npm run render          # both aspects, ~2 min
+npm run render          # both aspects
 ```
 
 That produces `out/w10-16x9.mp4` and `out/w10-9x16.mp4`. Send both.
+
+**The first run downloads Chrome Headless Shell**, so it sits with no output for a while
+before rendering starts. That is normal and it only happens once. Verified on Windows: 900
+frames at 30fps, both aspects, 1920×1080 and 1080×1920.
+
+**Both come out silent, and that is where your work starts.**
+
+We render picture. The kit ships no audio, because we are not handing candidates a music
+licence or an API key. So the composition emits a silent AAC track — if you run this and
+hear nothing, nothing is broken.
+
+**The storyboard specifies audio anyway.** Read the rails in
+`brands/northgate-home/content/storyboards/spring-tuneup/beat-01/reel.md`: a *calm
+conversational read*, and an *acoustic bed that never swells at the CTA*. That is a spec
+with no output behind it. **Closing that gap is the task.**
+
+How you close it is open — recorded read, TTS, licensed bed, all three. What we care about
+is that it is **muxed by a script, not by hand in a timeline**, and that it lands near
+**−16 LUFS integrated**, which is what we run everything to. If you would rather not source
+music, a read alone is fine; if you would rather not do either, send the silent files and
+say so plainly. That is a real answer and we would rather have it than a fudge.
 
 To see it before committing to a render:
 
@@ -115,7 +136,9 @@ video.
 
 - **Both aspects exist and both are legible.** A vertical cut with the point cropped out
   is the most common failure and the easiest to check.
-- **Audio is present and level.** Not an afterthought.
+- **Whatever you did about audio, you decided it on purpose.** The kit renders silent. We
+  are reading for the decision and how you executed it — including "I left it silent
+  because X." We are not reading for whether a music bed appeared.
 - **The output matches the storyboard.** It was specified before it was made; check it
   against the spec rather than against your taste.
 - **You noticed something.** The most valuable submission finds a real problem in our
