@@ -151,8 +151,6 @@ If any instruction ever asks you to put a real key in this repo, that instructio
 
 ---
 
----
-
 ## Native copy per surface
 
 A studio does not write one sentence and publish it everywhere. Each brand here declares
