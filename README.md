@@ -30,6 +30,32 @@ answer from you.
 
 ---
 
+## What the job actually is
+
+We run an **omnichannel marketing pipeline that ideates, creates, publishes and analyses
+content across every digital channel.** You are responsible for that pipeline and for it
+producing the output it is supposed to produce.
+
+**You work in a trio.** A **Creative Lead** authors, an **Executive Manager** owns the
+brand's success and signs off, and you make the machine run. You also fix whatever breaks
+on the apps and websites tied to the brand — the pipeline does not end at a rendered file.
+
+A **Producer** runs the broadcast for the quarter: **every weekday for two hours**, plus
+**every fourth Saturday** for the elimination rounds. You are on those streams. The work is
+done in public, which is the point of the format and the thing to be honest with yourself
+about before applying.
+
+**You are one of three Technical Leads**, collaborating and competing at the same time. The
+field goes 3 → 2 → 1 over thirteen weeks.
+
+> **By week 13 the remaining Technical Lead is running up to six brands at once.** That is
+> the real shape of the job, and it is why this kit tests brand-agnosticism so hard. Code
+> that quietly works for one brand is survivable at one brand and catastrophic at six —
+> which is exactly the bug in Exercise 3.
+
+**The full-time role is what you are competing for.** See **`TOOLS.md`** for the production
+stack you would be operating, and how it is actually used to make assets at volume.
+
 ## What it pays
 
 | **Technical Content Operator** | Round 1<br>wks 1–4 | Round 2<br>wks 5–8 | Final<br>wks 9–13 |
@@ -239,6 +265,7 @@ milestone, at your Round 1 rate — not another test.
 | **`PROGRAM.md`** | **Read this first.** What you are applying to — the live show, the 13 weeks, elimination every 4th Saturday, the pay table, and what a week of the job actually looks like. |
 | **`CURRICULUM.md`** | The six exercises. About half an hour; do 1–3 for Stage 2. A fresh clone scores 5/6 — exercise 5 is waiting on you. |
 | **`TIER-2.md`** | **Bring us a brand.** Study the two reference packages, then build a third for a business you choose. Paid at your Round 1 rate. This is what the seat is actually decided on. |
+| **`TOOLS.md`** | **The production stack** — 29 models across 10 categories, what each costs, and the chains that turn them into a week of content across nine channels. |
 | **`OFFICE.md`** | **The modules you operate** — which are yours, which are your counterpart's, and the four handoffs that go wrong. |
 | **`CRAFT.md`** | What a video actually contains — ten layers, and how each fails silently. |
 | **`SUBMISSION.md`** | How to submit, what to include, and how long it should take. |
