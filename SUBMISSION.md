@@ -31,9 +31,52 @@ A link is fine if they will not attach, as long as it is actually open.
 Full detail in `RENDERED-SAMPLE.md`. The short version: it is **new output from this
 pipeline**, not a portfolio piece, and the pair of aspects is the point.
 
-### 3 · Send both in one message
+### 3 · Send it in one message, in chat, when it is all done
 
-The PR link, both videos, and the write-up below. One message.
+The PR link, both videos, the write-up below, and anything you built beyond the exercises.
+One message, when the whole thing is finished — not in pieces as you go.
+
+## Covering the bases — what we need to believe you can do
+
+The exercises prove you can operate the pipeline. **The thing we actually need to know is
+that you can automate content**, which is a larger claim. These are the bases. Some you can
+demonstrate in this kit; some the kit does not contain and you answer in writing. **Both are
+fine — what is not fine is skipping one.**
+
+| Base | In this kit? | How you show it |
+|---|---|---|
+| **The calendar is the source of truth** | **Yes** | Nothing is invented downstream. Trace one cell from the calendar through to a rendered asset. |
+| **Storyboarding** | **Yes** | The storyboard is the spec. Say what your render does and does not match. |
+| **Composition IDs** | Partly — `composition_id` is in the storyboard front-matter | What breaks when a comp id changes, and how you would keep the registry and the renderer from drifting apart. |
+| **Templates** | **No** | Written answer. How you would make one composition serve many cells without a special case per brand. |
+| **Loops and goals** | **No** | Written answer. A goal sets what a period must achieve; a loop runs spec → render → check → improve until it does. Describe how you would close that loop and what stops it looping forever. |
+| **VLM review and audit at scale** | **No** | Written answer, and the one we read hardest. See below. |
+| **Updating the calendar from what you find** | **Yes** | The loop is not one-way. If an audit finds a week that cannot render, the calendar changes. |
+| **Working live with a Creative Lead** | — | They re-author while you are mid-render. What do you re-render, and how do you know? |
+
+**Be honest about the split.** Four of these are not in the kit and you are not expected to
+fake them. A clear paragraph on how you would build one beats a vague claim to have done it.
+
+### The one that matters most: auditing at scale
+
+**You cannot personally watch six brands' output every week.** By week 13 that is the job, so
+the only workable answer is machine review — a vision model looking at rendered frames and
+telling you what a gate cannot: text cropped out of the vertical cut, an illegible caption,
+a frame that is simply black, a logo where it must never be.
+
+Tell us how you would build that: what you would sample, what you would check, what you
+would do when it flags something, and — most importantly — **how you avoid a reviewer that
+cries wolf.** An audit nobody trusts is worse than none, because people learn to click past
+it.
+
+You do not need to have built one. We want to see you reason about it.
+
+### Automation is the actual test
+
+**If any part of your submission was done by hand that a script could have done, that is the
+thing we will ask about.** A GUI produces one asset; a script produces a season. Show us
+something driven programmatically — the kit render counts, and anything you wired yourself
+counts more.
 
 ## What to include in the message
 
