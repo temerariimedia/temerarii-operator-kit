@@ -1,77 +1,79 @@
 # The rendered sample
 
-**Short version: send one 15–30 second video you have already made, in whatever tool you
-already use.** That is the whole ask. You do not need to install anything from this repo
-to do it.
+**Render one asset out of this pipeline, from a cell in this repo, and send us the file.**
+
+Not a showreel. Not something from your portfolio. **New output, produced by the machine
+you would be operating.**
 
 ---
 
-## Why this exists, and why the kit says rendering is "out of scope"
+## Why this, and not a past piece
 
-Those two statements confused at least one person, which means the repo said it badly.
-Here is the distinction:
+An earlier version of this file asked for work you had already made. That was wrong for
+this seat, and the confusion was ours.
 
-**The exercises in `CURRICULUM.md` do not require a render toolchain.** No headless
-Chrome, no Remotion install, no ffmpeg. We would rather test your judgment than your
-ability to get a build working on your machine, and setup problems tell us nothing about
-you.
+A portfolio piece tells us what you can make **by hand**. This seat is not about that. It
+is about making a *system* produce good work at volume — so the only sample that answers
+the question is one that came out of the system.
 
-**We do still want to see rendered work.** Just not work you make *for us, in our tools,
-for free.* We want something you have already produced.
+**Getting a render toolchain working is part of the job.** It is not a barrier we are
+apologising for. An operator who cannot get `npm install` and a render command to
+cooperate on their own machine is going to struggle on a Tuesday when a build breaks
+during a broadcast.
 
-That is the same rule as everything else here: **qualification asks for work you have
-already done.** Nothing new, nothing unpaid.
+## What to produce
 
-## What to send
+```bash
+cd remotion
+npm install
+npm run render          # both aspects, ~2 min
+```
 
-**One piece, 15–30 seconds.** Not a showreel, not a combined sample across every tool.
-One short thing you made.
+That produces `out/w10-16x9.mp4` and `out/w10-9x16.mp4`. Send both.
 
-Any tool: Remotion, After Effects, Premiere, DaVinci, CapCut, Blender, ffmpeg scripts,
-something you wrote yourself. **We care what you can produce and how you think about it,
-not which software you own.**
+To see it before committing to a render:
 
-If you can, send the same piece in **both 9:16 and 16:9** — that one detail tells us more
-than another thirty seconds of footage, because it shows whether you think about the crop
-before you compose.
+```bash
+npm run studio          # opens the Remotion preview
+```
 
-## Send four lines with it
+**Two files: the same authored week in 16:9 and 9:16.** Same source, two crops. That pair
+is the whole point — it is where most people discover their composition does not survive
+vertical.
 
-Not an essay. Four lines:
+The content is not yours to invent. It comes from `brands/northgate-home/` — the cell,
+the storyboard, and the rails. **Your job is to make the pipeline produce it correctly**,
+not to art-direct it.
 
-1. **What tool, and why that one.**
-2. **How long it took**, roughly.
-3. **One thing you would do differently.**
-4. **What was automated versus hand-placed** — if any of it was.
+## Then send four lines
 
-That last one is what we actually read. A piece that was 90% automated and looks
-hand-made is more interesting to us than a beautiful thing you built frame by frame,
-because this seat is about making the machine produce good work at volume.
+1. **What broke first**, and how you fixed it. Something will.
+2. **How long it took**, including setup, honestly.
+3. **One thing that is wrong with the output** that you would fix given a day.
+4. **One thing about the pipeline you would change** — a gate you would add, a step you
+   would automate, a decision you would move.
+
+**That last line is what we actually read.** Anyone can follow a render command. We are
+hiring for the instinct to improve the thing while using it.
 
 ## What we are looking for
 
-- **Legible at speed.** If the point arrives at second nine, it does not survive a feed.
-- **Text that respects the safe area.** Captions under the platform UI, not behind it.
-- **Audio that is not an afterthought.** Levels consistent, no swell at the call to
-  action.
-- **Some evidence of a system.** Reused components, a template, a script — anything that
-  suggests you thought about the second piece while making the first.
+- **Both aspects exist and both are legible.** A vertical cut with the point cropped out
+  is the most common failure and the easiest to check.
+- **Audio is present and level.** Not an afterthought.
+- **The output matches the storyboard.** It was specified before it was made; check it
+  against the spec rather than against your taste.
+- **You noticed something.** The most valuable submission finds a real problem in our
+  pipeline. Say so — that is a strong signal, not a complaint.
 
-**We are not scoring production value.** A plain piece assembled cleanly beats an
-elaborate one held together by hand.
+**Not scored:** production polish. You did not design this; you rendered it. We are
+watching how you operate and what you notice.
 
-## What happens to it
+## If it will not build
 
-Nothing. It is yours, it stays yours, we do not use it, and it is not published anywhere.
-It is a sample, and looking at it is the only thing we do with it.
+**Tell us where it stopped, with the error.** A candidate who gets three steps in, hits a
+genuine environment problem and reports it precisely is more useful than one who silently
+gives up — and if our setup instructions are wrong, that is our bug and you have found it.
 
-## If you have nothing
-
-Say so. A candidate who has never rendered video but understands pipelines is still
-interesting for this seat — the rendering half is trained on the job, and
-`FROM-KIT-TO-PRODUCTION.md` says so plainly. Tell us what you have built instead and let
-us judge that.
-
-**What we would rather not receive** is something built specifically for this application
-over a weekend. That is unpaid work, we did not ask for it, and it tells us less than a
-rough thing you made last year for a real reason.
+Do not spend a weekend on this. If it is more than an evening, something is wrong on our
+side and we want to hear about it.

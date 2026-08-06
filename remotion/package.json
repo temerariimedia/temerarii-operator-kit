@@ -1,0 +1,22 @@
+{
+  "name": "operator-kit-remotion",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The render half of the pipeline — one composition, driven by authored data.",
+  "scripts": {
+    "prepare-data": "node scripts/extract.mjs",
+    "render:16x9": "npm run prepare-data && remotion render SceneReel out/w10-16x9.mp4",
+    "render:9x16": "npm run prepare-data && remotion render SceneReelVertical out/w10-9x16.mp4",
+    "render": "npm run render:16x9 && npm run render:9x16",
+    "studio": "npm run prepare-data && remotion studio"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.399",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.399"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.18"
+  }
+}

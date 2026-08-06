@@ -1,0 +1,91 @@
+import {
+  AbsoluteFill, interpolate, Sequence, useCurrentFrame, useVideoConfig,
+} from "remotion";
+import data from "./data.json";
+
+/**
+ * One scene per authored slide. Nothing here invents content: every word on screen came
+ * out of the storyboard, which is what makes the render checkable against the spec.
+ *
+ * The layout branches on aspect ratio rather than scaling. A 9:16 frame is not a squeezed
+ * 16:9 — the safe area is different, the type has to be larger relative to the frame, and
+ * the bottom fifth is covered by platform UI on most apps. Compose for it or lose the
+ * caption behind a like button.
+ */
+const RED = "#EC1C24";
+const INK = "#0A0A0C";
+
+const Slide: React.FC<{ direction: string; onScreen: string | null }> = ({
+  direction, onScreen,
+}) => {
+  const frame = useCurrentFrame();
+  const { width, height, fps } = useVideoConfig();
+  const vertical = height > width;
+
+  // Ease in over 8 frames. One focal move per scene — see the brand book's motion rules.
+  const enter = interpolate(frame, [0, 8], [0, 1], {
+    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+  });
+  const lift = interpolate(frame, [0, 8], [18, 0], {
+    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+  });
+
+  return (
+    <AbsoluteFill
+      style={{
+        backgroundColor: INK,
+        justifyContent: vertical ? "flex-start" : "center",
+        // 9:16: keep everything out of the bottom fifth, where the platform UI sits.
+        padding: vertical ? "18% 8% 26%" : "0 12%",
+        fontFamily: "Tahoma, Verdana, sans-serif",
+      }}
+    >
+      <div style={{ opacity: enter, transform: `translateY(${lift}px)` }}>
+        {onScreen ? (
+          <div
+            style={{
+              color: "#fff",
+              fontSize: vertical ? 96 : 84,
+              fontWeight: 700,
+              lineHeight: 1.1,
+              letterSpacing: "-0.02em",
+            }}
+          >
+            {onScreen}
+          </div>
+        ) : null}
+        <div
+          style={{
+            color: "#C9CCD2",
+            fontSize: vertical ? 46 : 38,
+            lineHeight: 1.45,
+            marginTop: onScreen ? 28 : 0,
+            maxWidth: vertical ? "100%" : "80%",
+          }}
+        >
+          {direction}
+        </div>
+        <div
+          style={{
+            width: 84, height: 6, backgroundColor: RED,
+            marginTop: 34, borderRadius: 3,
+          }}
+        />
+      </div>
+    </AbsoluteFill>
+  );
+};
+
+export const SceneReel: React.FC = () => {
+  const { durationInFrames } = useVideoConfig();
+  const per = Math.floor(durationInFrames / data.slides.length);
+  return (
+    <AbsoluteFill style={{ backgroundColor: INK }}>
+      {data.slides.map((s, i) => (
+        <Sequence key={i} from={i * per} durationInFrames={per}>
+          <Slide direction={s.direction} onScreen={s.onScreen} />
+        </Sequence>
+      ))}
+    </AbsoluteFill>
+  );
+};
