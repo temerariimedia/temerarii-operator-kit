@@ -69,6 +69,10 @@ what makes it qualification rather than unpaid work, and why it takes well under
 
 Full detail, the season calendar and the elimination structure: **`PROGRAM.md`**.
 
+The whole programme is also public, including every one of the 65 episodes, the Saturday
+elimination format and the pay ladder for all four tracks:
+**https://temerarii-sandbox.vercel.app/finessionals**
+
 ---
 
 ## The one idea
@@ -161,6 +165,9 @@ pipeline/
   utm.py               attributable links
 mock-api/server.py     stands in for the real distribution API
 training/grade.py      the grader
+remotion/              the render path — two compositions, one component, both aspects
+  scripts/extract.mjs  reads the AUTHORED storyboard; the render never invents content
+docs/                  reference material
 ```
 
 ## Commands
@@ -235,23 +242,23 @@ milestone, at your Round 1 rate — not another test.
 | **`OFFICE.md`** | **The modules you operate** — which are yours, which are your counterpart's, and the four handoffs that go wrong. |
 | **`CRAFT.md`** | What a video actually contains — ten layers, and how each fails silently. |
 | **`SUBMISSION.md`** | How to submit, what to include, and how long it should take. |
-| **`RENDERED-SAMPLE.md`** | **Send one 15–30s video you have already made**, in any tool. Two minutes to read, nothing to install. |
+| **`RENDERED-SAMPLE.md`** | **Render an asset out of this pipeline and send the file** — both aspects, from a cell in this repo. New output from the machine, not a portfolio piece. |
 | **`FROM-KIT-TO-PRODUCTION.md`** | **Read before day one.** What changes when you move from this kit to the real system — what is the same, what is bigger, what the kit deliberately left out (rendering), and what your first week looks like. |
 
 ## What this kit is not
 
-It is a **slice** — 26 files against roughly 6,000 in production. Same shape, same rules,
+It is a **slice** — 47 files against roughly 6,000 in production. Same shape, same rules,
 same choke points; there is simply more of it.
 
-**Rendering** — Remotion, dual aspect ratios, audio muxed to −16 LUFS — is a real part of
-the job and is absent from these exercises, because it needs headless Chrome and a working
-render path and we would rather test your judgment than your ability to install a
-toolchain.
+**Rendering is in scope, and it is in `remotion/`.** Remotion, both aspect ratios from one
+source, audio muxed to −16 LUFS. `npm install && npm run render` is verified on Windows —
+900 frames at 30fps, 1920×1080 and 1080×1920. **Getting a render toolchain working is part
+of the job**, not a barrier we apologise for.
 
-**That is not the same as saying we do not want to see rendered work.** We do — just work
-you have *already made*, in whatever tool you already use, not something built for us over
-a weekend. One 15–30 second piece. See **`RENDERED-SAMPLE.md`**; it takes two minutes to
-read and nothing to install.
+**We want new output from this pipeline, not a portfolio piece.** A past piece shows what
+you make by hand; this seat is about making a *system* produce work at volume. See
+**`RENDERED-SAMPLE.md`** — including the audio gap, which is the actual task.
+
 And **credentials**: there are none, there is no way to add one usefully, and that does not
 change after you are hired. `FROM-KIT-TO-PRODUCTION.md` explains why that is the design
 rather than a probation period.
