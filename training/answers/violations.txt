@@ -1,0 +1,20 @@
+10 days.Mon.social[2] dangerous
+10 days.Thu.social[2] don't wait
+10 days.Sat.email_body cheapest
+
+Judgment on the negation case (dangerous):
+
+The Mon social line is arguing *against* fear-selling: technicians are not busier
+because spring is dangerous — they are less busy. The word list cannot see that
+intent, so it flags a sentence that is doing the brand's job.
+
+I would treat it as a review signal, not a hard ship-blocker. I would not remove
+"dangerous" from the ban list — the list should stay blunt, or real fear-selling
+slips through. Prefer rewrite: drop the banned word and keep the argument
+("Our technicians are not busier in spring. They are less busy, which is the
+point."). If rewrite is impossible, require an explicit operator override with
+rationale rather than teaching the pipeline to auto-pass negation patterns
+(those heuristics fail in both directions).
+
+The other two hits are real: "Don't wait" is pressure; "cheapest" in the email is
+a softer case but still on the rail and worth rewriting.
