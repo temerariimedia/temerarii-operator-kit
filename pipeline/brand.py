@@ -79,3 +79,16 @@ def banned_words(brand: str | None = None) -> list[str]:
     """
     voice = brand_json(brand).get("voice") or {}
     return [w.lower() for w in (voice.get("banned_words") or [])]
+
+
+def cadence(brand: str | None = None) -> dict[str, dict]:
+    """Posts per week per channel: {"min": n, "max": n}.
+
+    Lives in the brand package, not in code, for the same reason the banned-word list
+    does: what a platform tolerates is a property of the brand's audience and its
+    relationship with them, not a constant. An email list that opted in for a weekly
+    digest and one that opted in for deal alerts have different ceilings.
+    """
+    raw = brand_json(brand).get("cadence") or {}
+    return {k: v for k, v in raw.items()
+            if not str(k).startswith("_") and isinstance(v, dict)}

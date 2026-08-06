@@ -37,9 +37,10 @@ with vertical cuts to TikTok and Instagram.
 ```
   Round 1        Round 2        Final
   weeks 1–4      weeks 5–8      weeks 9–13
-  3 per track    2 per track    1 per track
-  12 people      8 people       4 people
+  3 operators    2 operators    1 operator
 ```
+
+Three people hold this seat in Round 1. One holds it at the finale.
 
 One 4-4-5 runs all of it — it is the fiscal calendar the brands' content is planned on, the
 marketing calendar campaigns report on, **and** the competition. So a month closing is one
@@ -52,12 +53,9 @@ produced. Not on how anyone felt about you.
 
 **Rates rise as the field narrows.** Fewer people, more work each, more money each.
 
-| Track | Round 1 | Round 2 | Final |
+| **Technical Content Operator** | Round 1<br>wks 1–4 | Round 2<br>wks 5–8 | Final<br>wks 9–13 |
 |---|---|---|---|
-| **Technical Content Operator** | **$150/wk** | **$240/wk** | **$456/wk** |
-| Creative & Brand Quality Lead | $125/wk | $200/wk | $380/wk |
-| Live Broadcast Producer | $125/wk | $200/wk | $380/wk |
-| Executive Manager | $100/wk | $160/wk | $304/wk |
+| **Your rate** | **$150/wk** | **$240/wk** | **$456/wk** |
 
 The finalist converts to an ongoing contract.
 

@@ -91,23 +91,43 @@ def resolve(wd: Week, channel: str) -> tuple[str, str] | None:
         return None
 
     if ch in SOCIAL_CHANNELS:
-        # Social posts are authored as a list per day; channels draw from it in order so
-        # the same week does not publish the identical sentence to nine platforms.
-        posts: list[tuple[str, str]] = []
-        for day, slot in _days_in_order(wd):
-            raw = slot.get("social")
-            if isinstance(raw, str) and raw.strip():
-                posts.append((raw, f"days.{day}.social"))
-            elif isinstance(raw, (list, tuple)):
-                for i, p in enumerate(raw):
-                    if isinstance(p, str) and p.strip():
-                        posts.append((p, f"days.{day}.social[{i}]"))
-        if not posts:
-            return None
-        idx = sorted(SOCIAL_CHANNELS).index(ch) % len(posts)
-        return posts[idx]
+        picks = resolve_many(wd, ch, 1)
+        return picks[0] if picks else None
 
     return None
+
+
+def social_pool(wd: Week) -> list[tuple[str, str]]:
+    """Every authored social post for the week, in day order."""
+    posts: list[tuple[str, str]] = []
+    for day, slot in _days_in_order(wd):
+        raw = slot.get("social")
+        if isinstance(raw, str) and raw.strip():
+            posts.append((raw, f"days.{day}.social"))
+        elif isinstance(raw, (list, tuple)):
+            for i, item in enumerate(raw):
+                if isinstance(item, str) and item.strip():
+                    posts.append((item, f"days.{day}.social[{i}]"))
+    return posts
+
+
+def resolve_many(wd: Week, channel: str, n: int) -> list[tuple[str, str]]:
+    """Allocate up to `n` posts to a channel from the week's pool.
+
+    THE BUG THIS REPLACES: the old resolver handed each social channel exactly ONE post
+    and discarded the rest. A week authoring 5 posts a day — 35 across the week — shipped
+    9 and dropped 26. The work was done, gate-checked, and then quietly never left the
+    building. Nothing failed, so nothing surfaced it.
+
+    Channels are offset into the pool by name so two platforms do not open with the same
+    sentence, and the pool wraps only if a channel's cadence genuinely exceeds what was
+    authored — which the cadence gate reports rather than hiding.
+    """
+    pool = social_pool(wd)
+    if not pool or n <= 0:
+        return []
+    start = sorted(SOCIAL_CHANNELS).index(channel) if channel in SOCIAL_CHANNELS else 0
+    return [pool[(start + i) % len(pool)] for i in range(min(n, len(pool)))]
 
 
 def unauthored(wd: Week, channels: list[str]) -> list[str]:

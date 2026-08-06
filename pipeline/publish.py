@@ -21,9 +21,9 @@ import sys
 import urllib.error
 import urllib.request
 
-from .brand import active_brand, brand_json
+from .brand import active_brand, brand_json, cadence
 from .calendar import anchor_date, load_all
-from .content import LIMITS, resolve, unauthored
+from .content import LIMITS, SOCIAL_CHANNELS, resolve, resolve_many, unauthored
 from .schedule import fiscal_label, week_sunday
 from .utm import build_utm
 
@@ -76,28 +76,31 @@ def build_payloads(week: int, brand: str | None = None) -> list[dict]:
     label = fiscal_label(week, anchor.year)
     manual = manual_channels(b)
     out: list[dict] = []
+    spec = cadence(b)
     for ch in channels(b):
-        # Native copy per surface. resolve() returns None rather than inventing text —
-        # an earlier version used the week's tagline for EVERY channel, which "worked"
-        # and produced fifteen identical posts. Unauthored channels are simply absent
-        # here and are caught loudly by the channel_coverage gate.
-        hit = resolve(wd, ch)
-        if hit is None:
-            continue
-        body, field = hit
-        out.append({
-            "brand": b,
-            "channel": ch,
-            "week": week,
-            "fiscal_label": label,
-            "scheduled_for": week_sunday(anchor, week).isoformat(),
-            "body": body,
-            "link": build_utm(brand=b, campaign=wd.campaign_id, channel=ch, week=week),
-            # "api" ships on --post; "manual" is built, validated and listed for a human.
-            "delivery": "manual" if ch in manual else "api",
-            # The traceability contract — the ACTUAL authored field, never synthesised.
-            "source": {"campaign": wd.campaign_id, "week": week, "field": field},
-        })
+        # How many times this channel publishes in a week comes from the BRAND PACKAGE,
+        # not from code. Social channels take a slice of the week's authored pool; every
+        # other surface is a single artifact.
+        #
+        # This replaces a resolver that took ONE post per channel and discarded the rest —
+        # a week authoring 35 social posts shipped 9 and dropped 26, silently.
+        want = int((spec.get(ch) or {}).get("max", 1)) if ch in SOCIAL_CHANNELS else 1
+        hits = resolve_many(wd, ch, want) if ch in SOCIAL_CHANNELS else (
+            [resolve(wd, ch)] if resolve(wd, ch) else [])
+        for body, field in [h for h in hits if h]:
+            out.append({
+                "brand": b,
+                "channel": ch,
+                "week": week,
+                "fiscal_label": label,
+                "scheduled_for": week_sunday(anchor, week).isoformat(),
+                "body": body,
+                "link": build_utm(brand=b, campaign=wd.campaign_id, channel=ch, week=week),
+                # "api" ships on --post; "manual" is built, validated and listed for a human.
+                "delivery": "manual" if ch in manual else "api",
+                # The traceability contract — the ACTUAL authored field, never synthesised.
+                "source": {"campaign": wd.campaign_id, "week": week, "field": field},
+            })
     return out
 
 
@@ -156,9 +159,12 @@ def main(argv=None) -> int:
     b = active_brand(a.brand)
     payloads = build_payloads(a.week, b)
     n_manual = sum(1 for p in payloads if p.get("delivery") == "manual")
-    print(f"PUBLISH — brand={b} week={a.week} · {len(payloads)} payload(s) "
+    from .content import social_pool
+    pieces = len(social_pool(load_all(b)[a.week]))
+    print(f"PUBLISH — brand={b} week={a.week}")
+    print(f"  {pieces} authored social piece(s) -> {len(payloads)} placement(s) "
           f"across {len(channels(b))} channel(s)"
-          + (f" ({n_manual} manual)" if n_manual else ""))
+          + (f", {n_manual} manual" if n_manual else ""))
 
     errs = validate(payloads)
     if errs:

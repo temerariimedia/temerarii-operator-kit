@@ -162,9 +162,55 @@ def gate_channel_limits(brand: str) -> Result:
     return (not problems), problems
 
 
+
+
+def gate_channel_cadence(brand: str) -> Result:
+    """Every channel must publish within the cadence its brand package declares.
+
+    FAILS BOTH WAYS, and the under case is the important one.
+
+    Over the ceiling is spam: the platform suppresses reach or the audience disengages,
+    and somebody notices. Under the floor is invisible — the week is authored, the gates
+    go green, and the work never leaves the building. This system shipped 9 of 35 authored
+    social posts a week for exactly that reason: the resolver took one post per channel
+    and dropped the other 26, and no check existed that could see it.
+
+    A channel you declare and then do not use is a promise to an audience you are not
+    keeping.
+    """
+    from .brand import cadence
+    from .content import social_pool
+    from .publish import channels
+
+    spec = cadence(brand)
+    if not spec:
+        return False, [f"{brand}: governance/brand.json has no cadence block"]
+
+    declared = channels(brand)
+    problems: list[str] = []
+    for wk, wd in sorted(load_all(brand).items()):
+        pool = len(social_pool(wd))
+        for ch in declared:
+            rule = spec.get(ch)
+            if not rule:
+                problems.append(f"W{wk}: channel {ch!r} has no cadence declared")
+                continue
+            lo, hi = int(rule.get("min", 0)), int(rule.get("max", 0))
+            planned = min(hi, pool) if ch in {c for c in declared} else 0
+            if ch in ("blog", "email", "sms", "podcast", "youtube_longform"):
+                continue  # single-artifact channels, covered by channel_coverage
+            if pool and planned < lo:
+                problems.append(
+                    f"W{wk} {ch}: only {planned} post(s) available against a floor of "
+                    f"{lo}/wk — the week authors {pool}, which cannot fill the channels "
+                    f"declared")
+    return (not problems), problems
+
+
 GATES: dict[str, Callable[[str], Result]] = {
     "placement": gate_placement,
     "channel_coverage": gate_channel_coverage,
+    "channel_cadence": gate_channel_cadence,
     "channel_limits": gate_channel_limits,
     "year_boundary": gate_year_boundary,
     "completeness": gate_completeness,

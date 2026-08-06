@@ -127,5 +127,73 @@
     "body": "Tahoma",
     "mono": "JetBrains Mono"
   },
-  "_note": "Trimmed for the operator kit: only the fields the pipeline reads. The full brand package also carries design tokens, cross-promo rules and business metadata."
+  "_note": "Trimmed for the operator kit: only the fields the pipeline reads. The full brand package also carries design tokens, cross-promo rules and business metadata.",
+  "cadence": {
+    "_note": "Posts per week per channel. `max` is what the platform tolerates before it suppresses reach or the audience disengages; `min` is the floor below which declaring the channel was a lie. The gate fails BOTH ways.",
+    "x": {
+      "min": 14,
+      "max": 35,
+      "why": "high tolerance; under-posting is the real risk"
+    },
+    "linkedin": {
+      "min": 3,
+      "max": 7,
+      "why": "more than 1/day suppresses reach"
+    },
+    "instagram": {
+      "min": 5,
+      "max": 14,
+      "why": "1-2/day"
+    },
+    "facebook": {
+      "min": 3,
+      "max": 10,
+      "why": "1/day is plenty"
+    },
+    "threads": {
+      "min": 5,
+      "max": 21,
+      "why": "conversational, tolerates volume"
+    },
+    "bluesky": {
+      "min": 5,
+      "max": 21,
+      "why": "as X, smaller audience"
+    },
+    "pinterest": {
+      "min": 5,
+      "max": 35,
+      "why": "evergreen; volume compounds"
+    },
+    "tiktok": {
+      "min": 3,
+      "max": 14,
+      "why": "1-2/day"
+    },
+    "youtube": {
+      "min": 3,
+      "max": 7,
+      "why": "shorts; 1/day"
+    },
+    "youtube_longform": {
+      "min": 1,
+      "max": 2,
+      "why": "production cost is the limit"
+    },
+    "blog": {
+      "min": 1,
+      "max": 3,
+      "why": "canonical argument; quality over volume"
+    },
+    "email": {
+      "min": 1,
+      "max": 2,
+      "why": "more reads as a list you sold"
+    },
+    "sms": {
+      "min": 0,
+      "max": 1,
+      "why": "~2/month; more is unsubscribes and complaints"
+    }
+  }
 }

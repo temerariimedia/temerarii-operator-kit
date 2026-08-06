@@ -32,12 +32,9 @@ answer from you.
 
 ## What it pays
 
-| Track | Round 1 | Round 2 | Final |
+| **Technical Content Operator** | Round 1<br>wks 1–4 | Round 2<br>wks 5–8 | Final<br>wks 9–13 |
 |---|---|---|---|
-| **Technical Content Operator** — this seat | **$150/wk** | **$240/wk** | **$456/wk** |
-| Creative & Brand Quality Lead | $125/wk | $200/wk | $380/wk |
-| Live Broadcast Producer | $125/wk | $200/wk | $380/wk |
-| Executive Manager | $100/wk | $160/wk | $304/wk |
+| **Your rate** | **$150/wk** | **$240/wk** | **$456/wk** |
 
 ### How the field narrows
 
